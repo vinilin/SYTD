@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="698" height="536" 
+	showCloseButton="true" xmlns:System="Custom.System.*" creationComplete="init()"
+    verticalScrollPolicy="off" horizontalScrollPolicy="off">
+	<mx:Script source="NotifyEdit_Script.as"/>
+	<mx:Label x="10" y="75" text="标题："/>
+	<mx:TextInput id="tbox_title" x="45" y="73" width="591"/>
+	<System:IFrame id="iFrame" width="635" height="350" y="103" x="1"/>
+	<mx:Button id="btnSave" x="588" y="461" label="保存"/>
+	<mx:Label x="10" y="12" text="开始发布时间："/>
+	<mx:Label x="10" y="45" text="结束发布时间："/>
+	<mx:DateField x="95" y="11" id="df_start_day" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1"  width="116"/>
+	<mx:DateField x="95.5" y="43" id="df_end_day" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1"  width="115"/>
+	<mx:ComboBox x="219" y="10" width="50" id="cbox_start_hour"></mx:ComboBox>
+	<mx:ComboBox x="291" y="10" width="50" id="cbox_start_minute"></mx:ComboBox>
+	<mx:Label x="270" y="12" text="时"/>
+	<mx:Label x="341.5" y="12" text="分"/>
+	<mx:Label x="341.5" y="45" text="分"/>
+	<mx:ComboBox x="218.5" y="43" width="50" id="cbox_end_hour"></mx:ComboBox>
+	<mx:ComboBox x="291.5" y="43" width="50" id="cbox_end_minute"></mx:ComboBox>
+	<mx:Label x="269.5" y="45" text="时"/>
+</mx:TitleWindow>

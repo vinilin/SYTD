@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="FileSetMan" Class="FileSetManDBDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=FileSetMan;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FileSetManConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[File]" Member="File">
+    <Type Name="File">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileSetID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ShowIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FileSet_File" Member="FileSet" AccessModifier="Internal" ThisKey="FileSetID" OtherKey="ID" Type="FileSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileSet" Member="FileSet">
+    <Type Name="FileSet">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ready" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="downloaded" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="FileSet_File" Member="File" ThisKey="ID" OtherKey="FileSetID" Type="File" />
+    </Type>
+  </Table>
+</Database>

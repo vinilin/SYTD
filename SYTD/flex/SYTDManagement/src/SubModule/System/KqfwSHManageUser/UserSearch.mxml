@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="284" height="222" showCloseButton="true" title="查询">
+	<mx:Script source="UserSearch_Script.as"/>
+	<mx:Label x="21" y="21" text="用户名："/>
+	<mx:Label x="21" y="51" text="真实姓名："/>
+	<mx:TextInput x="80" y="20" id="tbox_userName" maxChars="25" width="160"/>
+	<mx:TextInput x="80" y="50" id="tbox_trueName" maxChars="25" width="160"/>
+	<mx:Button x="172" y="130" label="查询" width="68" id="btnSearch"/>
+	<mx:Label x="21" y="85" text="归属站点："/>
+	<mx:ComboBox x="80" y="80" id="cbox_subList" width="160"></mx:ComboBox>
+	
+</mx:TitleWindow>

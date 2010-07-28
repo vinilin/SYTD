@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="284" height="226" showCloseButton="true" title="日志查询">
+	<mx:Script source="LogSearch_Script.as"/>
+	<mx:Label x="21" y="21" text="模块："/>
+	<mx:Label x="21" y="51" text="日志类型："/>
+	<mx:Button x="168" y="150" label="查询" width="68" id="btnSearch"/>
+	<mx:Label x="21" y="85" text="开始时间："/>
+	<mx:Label x="21" y="111" text="结束时间："/>
+	<mx:ComboBox x="80" y="19" id="cbox_module" width="160"></mx:ComboBox>
+	<mx:ComboBox x="80" y="49" id="cbox_logType" width="160"></mx:ComboBox>
+	<mx:DateField x="80" y="82" width="156" id="df_startDate" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1"/>
+	<mx:DateField x="80" y="109" width="156" id="df_endDate" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1"/>
+	
+</mx:TitleWindow>
+ 

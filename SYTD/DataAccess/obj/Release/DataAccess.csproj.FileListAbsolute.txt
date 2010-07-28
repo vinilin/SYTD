@@ -1,0 +1,14 @@
+F:\SYTD\DataAccess\bin\Release\DataAccess.dll
+F:\SYTD\DataAccess\bin\Release\DataAccess.pdb
+F:\SYTD\DataAccess\bin\Release\Common.dll
+F:\SYTD\DataAccess\bin\Release\Common.pdb
+F:\SYTD\DataAccess\obj\Release\ResolveAssemblyReference.cache
+F:\SYTD\DataAccess\obj\Release\DataAccess.dll
+F:\SYTD\DataAccess\obj\Release\DataAccess.pdb
+D:\work\SYTD\DataAccess\bin\Release\DataAccess.dll
+D:\work\SYTD\DataAccess\bin\Release\DataAccess.pdb
+D:\work\SYTD\DataAccess\bin\Release\Common.dll
+D:\work\SYTD\DataAccess\bin\Release\Common.pdb
+D:\work\SYTD\DataAccess\obj\Release\ResolveAssemblyReference.cache
+D:\work\SYTD\DataAccess\obj\Release\DataAccess.dll
+D:\work\SYTD\DataAccess\obj\Release\DataAccess.pdb

@@ -1,0 +1,22 @@
+<publishData>
+  <publishTarget publishUrl="D:\release\SM\">
+    <file relUrl="bin/ShareMan.pdb" publishTime="02/18/2010 13:49:58" />
+    <file relUrl="bin/ShareMan.XmlSerializers.dll" publishTime="02/04/2010 20:57:05" />
+    <file relUrl="bin/ShareMan.dll" publishTime="02/18/2010 13:49:58" />
+    <file relUrl="MasterControl.asmx" publishTime="02/04/2010 20:57:04" />
+    <file relUrl="Web.config" publishTime="02/04/2010 20:57:05" />
+  </publishTarget>
+  <publishTarget publishUrl="f:\release\SM\">
+    <file relUrl="bin/ShareMan.pdb" publishTime="01/30/2010 14:14:55" />
+    <file relUrl="bin/ShareMan.XmlSerializers.dll" publishTime="01/30/2010 13:23:37" />
+    <file relUrl="bin/ShareMan.dll" publishTime="01/30/2010 14:14:55" />
+    <file relUrl="MasterControl.asmx" publishTime="11/11/2009 22:59:34" />
+    <file relUrl="Web.config" publishTime="01/28/2010 00:55:40" />
+  </publishTarget>
+  <publishTarget publishUrl="http://localhost/SM/">
+    <file relUrl="bin/ShareMan.pdb" publishTime="11/21/2009 01:49:56" />
+    <file relUrl="bin/ShareMan.dll" publishTime="11/21/2009 01:49:56" />
+    <file relUrl="MasterControl.asmx" publishTime="11/11/2009 22:59:34" />
+    <file relUrl="Web.config" publishTime="11/20/2009 22:32:04" />
+  </publishTarget>
+</publishData>

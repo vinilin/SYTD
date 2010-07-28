@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.5" name="ShareBrowseDB">
+  <DataContextMoniker Name="/ShareBrowseDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a05391f9-0c2f-4f1c-a9ae-f974aebfec46" absoluteBounds="3.5, 5, 2, 1.2797265625000005">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Software" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5cc8685-d303-4587-9bab-10d5795febd6" absoluteBounds="3.515, 5.46, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8ab67f4-27f7-4581-8b6f-940fa47b57e3" absoluteBounds="3.5, 1.25, 2, 1.1111067708333335">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Cartoon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b34cb23-52bd-470c-8365-ab8ae4ee6763" absoluteBounds="3.515, 1.71, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1e43871-0360-4927-8bbe-a4b933294368" absoluteBounds="3.5, 3.125, 2, 1.1111067708333335">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/FileItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91e746da-aecc-468e-af00-ac6388738336" absoluteBounds="3.515, 3.585, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="288df745-d45e-4939-8cd9-6170706c78c6" absoluteBounds="3.5, 7, 2, 1.2797265625000005">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Movie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed244101-54a4-49bd-8451-b98ce9259d9a" absoluteBounds="3.515, 7.46, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d415f3b2-2858-455a-a4a3-5b1b6770297e" absoluteBounds="3.5, 9, 2, 1.2797265624999987">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Music" />
+      <nestedChildShapes>
+        <elementListCompartment Id="021de67e-f923-418f-bcd4-466eafa2ee58" absoluteBounds="3.515, 9.46, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c1d81ac-f619-4eda-be6b-d72a9e67f7c6" absoluteBounds="6.75, 0.75, 2, 1.2797265625000003">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/PublishType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24f773df-86f0-4eaf-9645-836ff8d2bf25" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4bf07701-26da-4f74-8689-fd016621154a" absoluteBounds="0.5, 3.625, 2, 3.8090234374999996">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/BaseItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="518e4c4f-371c-4310-8a78-a6a70c8141bb" absoluteBounds="0.51500000000000012, 4.085, 1.9700000000000002, 3.2490234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4dbd38da-e9f4-4f83-83f7-1aca99867b43" absoluteBounds="6.625, 2.625, 2, 1.1111067708333333">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/VidioNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56010bc5-fb71-4092-ade5-702976f79056" absoluteBounds="6.64, 3.085, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

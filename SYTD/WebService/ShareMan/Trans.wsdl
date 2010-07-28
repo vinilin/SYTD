@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Trans"
+ targetNamespace="http://localhost:50000/"
+ xmlns:tns="http://localhost:50000/"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ftp="urn:ftp"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="urn:ftp"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ftp="urn:ftp"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <simpleType name="Status">
+   <restriction base="xsd:string">
+    <enumeration value="STOP"/><!-- enum const = 1 -->
+    <enumeration value="RUNNING"/><!-- enum const = 2 -->
+    <enumeration value="PAUSE"/><!-- enum const = 3 -->
+   </restriction>
+  </simpleType>
+  <complexType name="File">
+   <sequence>
+     <element name="id" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+     <element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   </sequence>
+  </complexType>
+  <complexType name="Position">
+   <sequence>
+     <element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="ip" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="user" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="pwd" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="port" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+   </sequence>
+  </complexType>
+  <complexType name="ArrayOfFile">
+   <sequence>
+     <element name="id" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+     <element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="item" type="ftp:File" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+   </sequence>
+  </complexType>
+ </schema>
+
+</types>
+
+<message name="TransformRequest">
+ <part name="flist" type="ftp:ArrayOfFile"/>
+ <part name="position" type="ftp:Position"/>
+</message>
+
+<message name="TransformResponse">
+ <part name="response" type="xsd:int"/>
+</message>
+
+<message name="StopRequest">
+</message>
+
+<message name="StopResponse">
+ <part name="response" type="xsd:int"/>
+</message>
+
+<message name="StartRequest">
+</message>
+
+<message name="StartResponse">
+ <part name="response" type="xsd:int"/>
+</message>
+
+<message name="PauseRequest">
+</message>
+
+<message name="PauseResponse">
+ <part name="response" type="xsd:int"/>
+</message>
+
+<message name="ResumeRequest">
+</message>
+
+<message name="ResumeResponse">
+ <part name="response" type="xsd:int"/>
+</message>
+
+<message name="DeleteRequest">
+</message>
+
+<message name="DeleteResponse">
+ <part name="response" type="xsd:int"/>
+</message>
+
+<message name="GetState">
+</message>
+
+<message name="State">
+ <part name="total" type="xsd:positiveInteger"/>
+ <part name="downloaded" type="xsd:positiveInteger"/>
+ <part name="fsize" type="xsd:positiveInteger"/>
+ <part name="fdownloaded" type="xsd:positiveInteger"/>
+ <part name="status" type="ftp:Status"/>
+ <part name="fname" type="xsd:string"/>
+</message>
+
+<portType name="TransPortType">
+ <operation name="Transform">
+  <documentation>Service definition of function ftp__Transform</documentation>
+  <input message="tns:TransformRequest"/>
+  <output message="tns:TransformResponse"/>
+ </operation>
+ <operation name="Stop">
+  <documentation>Service definition of function ftp__Stop</documentation>
+  <input message="tns:StopRequest"/>
+  <output message="tns:StopResponse"/>
+ </operation>
+ <operation name="Start">
+  <documentation>Service definition of function ftp__Start</documentation>
+  <input message="tns:StartRequest"/>
+  <output message="tns:StartResponse"/>
+ </operation>
+ <operation name="Pause">
+  <documentation>Service definition of function ftp__Pause</documentation>
+  <input message="tns:PauseRequest"/>
+  <output message="tns:PauseResponse"/>
+ </operation>
+ <operation name="Resume">
+  <documentation>Service definition of function ftp__Resume</documentation>
+  <input message="tns:ResumeRequest"/>
+  <output message="tns:ResumeResponse"/>
+ </operation>
+ <operation name="Delete">
+  <documentation>Service definition of function ftp__Delete</documentation>
+  <input message="tns:DeleteRequest"/>
+  <output message="tns:DeleteResponse"/>
+ </operation>
+ <operation name="GetState">
+  <documentation>Service definition of function ftp__GetState</documentation>
+  <input message="tns:GetState"/>
+  <output message="tns:State"/>
+ </operation>
+</portType>
+
+<binding name="Trans" type="tns:TransPortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="Transform">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="Stop">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="Start">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="Pause">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="Resume">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="Delete">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="GetState">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="literal" namespace="urn:ftp" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="Trans">
+ <documentation>gSOAP 2.7.14 generated service definition</documentation>
+ <port name="Trans" binding="tns:Trans">
+  <SOAP:address location="http://localhost:50000/"/>
+ </port>
+</service>
+
+</definitions>

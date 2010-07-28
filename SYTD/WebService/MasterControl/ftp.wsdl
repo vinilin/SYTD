@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Service"
+ targetNamespace="http://tempuri.org/ftp.xsd/Service.wsdl"
+ xmlns:tns="http://tempuri.org/ftp.xsd/Service.wsdl"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ftp="http://tempuri.org/ftp.xsd"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="http://tempuri.org/ftp.xsd"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ftp="http://tempuri.org/ftp.xsd"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <simpleType name="Status">
+   <restriction base="xsd:string">
+    <enumeration value="STOP"/><!-- enum const = 1 -->
+    <enumeration value="RUNNING"/><!-- enum const = 2 -->
+    <enumeration value="PAUSE"/><!-- enum const = 3 -->
+   </restriction>
+  </simpleType>
+  <complexType name="File">
+   <sequence>
+     <element name="id" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+     <element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   </sequence>
+  </complexType>
+  <complexType name="Position">
+   <sequence>
+     <element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="ip" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="user" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="pwd" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="port" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+   </sequence>
+  </complexType>
+  <complexType name="ArrayOfFile">
+   <sequence>
+     <element name="id" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+     <element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="item" type="ftp:File" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+   </sequence>
+  </complexType>
+  <!-- operation request element -->
+  <element name="Transform">
+   <complexType>
+    <sequence>
+     <element name="flist" type="ftp:ArrayOfFile" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="position" type="ftp:Position" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="TransformResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Stop">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="StopResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Start">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="StartResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Pause">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="PauseResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Resume">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="ResumeResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Delete">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="DeleteResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="GetState">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="State">
+   <complexType>
+    <sequence>
+     <element name="total" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="downloaded" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="fsize" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="fdownloaded" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="ftp:Status" minOccurs="1" maxOccurs="1"/>
+     <element name="fname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+ </schema>
+
+</types>
+
+<message name="TransformRequest">
+ <part name="parameters" element="ftp:Transform"/>
+</message>
+
+<message name="TransformResponse">
+ <part name="parameters" element="ftp:TransformResponse"/>
+</message>
+
+<message name="StopRequest">
+ <part name="parameters" element="ftp:Stop"/>
+</message>
+
+<message name="StopResponse">
+ <part name="parameters" element="ftp:StopResponse"/>
+</message>
+
+<message name="StartRequest">
+ <part name="parameters" element="ftp:Start"/>
+</message>
+
+<message name="StartResponse">
+ <part name="parameters" element="ftp:StartResponse"/>
+</message>
+
+<message name="PauseRequest">
+ <part name="parameters" element="ftp:Pause"/>
+</message>
+
+<message name="PauseResponse">
+ <part name="parameters" element="ftp:PauseResponse"/>
+</message>
+
+<message name="ResumeRequest">
+ <part name="parameters" element="ftp:Resume"/>
+</message>
+
+<message name="ResumeResponse">
+ <part name="parameters" element="ftp:ResumeResponse"/>
+</message>
+
+<message name="DeleteRequest">
+ <part name="parameters" element="ftp:Delete"/>
+</message>
+
+<message name="DeleteResponse">
+ <part name="parameters" element="ftp:DeleteResponse"/>
+</message>
+
+<message name="GetState">
+ <part name="parameters" element="ftp:GetState"/>
+</message>
+
+<message name="State">
+ <part name="parameters" element="ftp:State"/>
+</message>
+
+<portType name="ServicePortType">
+ <operation name="Transform">
+  <documentation>Service definition of function ftp__Transform</documentation>
+  <input message="tns:TransformRequest"/>
+  <output message="tns:TransformResponse"/>
+ </operation>
+ <operation name="Stop">
+  <documentation>Service definition of function ftp__Stop</documentation>
+  <input message="tns:StopRequest"/>
+  <output message="tns:StopResponse"/>
+ </operation>
+ <operation name="Start">
+  <documentation>Service definition of function ftp__Start</documentation>
+  <input message="tns:StartRequest"/>
+  <output message="tns:StartResponse"/>
+ </operation>
+ <operation name="Pause">
+  <documentation>Service definition of function ftp__Pause</documentation>
+  <input message="tns:PauseRequest"/>
+  <output message="tns:PauseResponse"/>
+ </operation>
+ <operation name="Resume">
+  <documentation>Service definition of function ftp__Resume</documentation>
+  <input message="tns:ResumeRequest"/>
+  <output message="tns:ResumeResponse"/>
+ </operation>
+ <operation name="Delete">
+  <documentation>Service definition of function ftp__Delete</documentation>
+  <input message="tns:DeleteRequest"/>
+  <output message="tns:DeleteResponse"/>
+ </operation>
+ <operation name="GetState">
+  <documentation>Service definition of function ftp__GetState</documentation>
+  <input message="tns:GetState"/>
+  <output message="tns:State"/>
+ </operation>
+</portType>
+
+<binding name="Service" type="tns:ServicePortType">
+ <SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="Transform">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="Stop">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="Start">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="Pause">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="Resume">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="Delete">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="GetState">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="Service">
+ <documentation>gSOAP 2.7.14 generated service definition</documentation>
+ <port name="Service" binding="tns:Service">
+  <SOAP:address location="http://localhost:80"/>
+ </port>
+</service>
+
+</definitions>

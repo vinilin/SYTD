@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" horizontalScrollPolicy="auto" verticalScrollPolicy="auto"  creationComplete="init()" title="" fontStyle="italic">
+	<mx:Script>
+	 	<![CDATA[
+	 		import Custom.System.Log;
+	 		import Custom.System.UserInfo;
+	 		import mx.collections.ArrayCollection;
+	 		import mx.rpc.events.FaultEvent;
+	 		import mx.rpc.events.ResultEvent;
+	 		import mx.rpc.remoting.mxml.RemoteObject;
+	 		import mx.controls.Alert;
+	 		import mx.managers.PopUpManager;
+	 		
+	 		private var _remote:RemoteObject;
+	 		private var _remote1:RemoteObject;
+	 		private var _userInfo:UserInfo=new UserInfo();
+	 		
+	 		private function init():void
+	 		{
+	 			btnLogin.addEventListener(MouseEvent.CLICK,OnLogin);
+	 		}
+	 		
+	 		private function OnLogin(evt:MouseEvent):void
+	 		{
+	 			Logins();
+	 		}
+	 		private function Logins():void
+	 		{
+	 			if (tbox_username.text=="")
+	 			{
+	 				Alert.okLabel = "确定";
+	 				Alert.show("请输入登录用户。","警告",Alert.OK);
+	 				return;
+	 			}
+	 			if (tbox_password.text=="")
+	 			{
+	 				Alert.okLabel = "确定";
+	 				Alert.show("请输入登录密码。","警告",Alert.OK);
+	 				return;
+	 			}
+	 			_remote = new RemoteObject("fluorine");
+	 			_remote.source="ManagementService.Security.Security";
+	 			_remote.showBusyCursor=true;
+	 			_remote.Login(tbox_username.text,tbox_password.text);
+	 			_remote.addEventListener(ResultEvent.RESULT,OnLoginSuccess);
+	 			_remote.addEventListener(FaultEvent.FAULT,OnLoginFault);
+	 		}
+	 		private function OnLoginSuccess(evt:ResultEvent):void
+	 		{
+	 			var result:ArrayCollection=_remote.Login.lastResult as ArrayCollection;
+	 			if (result!=null && result.length>0)
+	 			{
+	 				if (result.source[0].ISBINDIP == "1" && result.source[0].BINDIP != result.source[0].CLIENTIP)
+	 				{
+	 					Custom.System.Log.WriteLog("loginModule","Login",this.tbox_username.text+"登录失败，登录终端不是绑定IP。",result.source[0].TRUENAME);
+		 				Alert.okLabel = "确定";
+	 					Alert.show("你不能在该终端登录。","登录失败",Alert.OK);	
+	 				}
+	 				else
+	 				{
+		 				//登录成功
+		 				_userInfo.trueName = result.source[0].TRUENAME;
+		 				_userInfo.userName = result.source[0].USERNAME;
+		 				_userInfo.subCode = result.source[0].SUBCODE;
+		 				_userInfo.subName = result.source[0].SUBNAME;
+		 				_userInfo.subServerIp = result.source[0].SERVERIP;
+		 				parentApplication._userInfo=_userInfo;
+						parentApplication.LoginCallBack();
+						Custom.System.Log.WriteLog("loginModule","Login",this.tbox_username.text+"登录成功",result.source[0].TRUENAME);
+		 				mx.managers.PopUpManager.removePopUp(this);
+	 				}
+	 			}
+	 			else
+	 			{//登录失败
+	 				this.tbox_password.text="";
+	 				Alert.okLabel = "确定";
+	 				Alert.show("用户名或密码错误，登录失败。","错误",Alert.OK);	 
+	 				Custom.System.Log.WriteLog("loginModule","Login",this.tbox_username.text+"登录失败",this.tbox_username.text);				
+	 			}
+	 			_remote.removeEventListener(ResultEvent.RESULT,OnLoginSuccess);
+	 			_remote.removeEventListener(FaultEvent.FAULT,OnLoginFault);
+	 		}
+	 		private function OnLoginFault(evt:FaultEvent):void
+	 		{
+	 			_remote.removeEventListener(ResultEvent.RESULT,OnLoginSuccess);
+	 			_remote.removeEventListener(FaultEvent.FAULT,OnLoginFault);
+	 			this.tbox_password.text="";
+	 			Alert.okLabel = "确定";
+	 			Alert.show("网络或系统错误，登录失败。"+evt.fault.faultString,"错误",Alert.OK);
+	 		}
+	 		
+	 	]]>
+	 </mx:Script>
+	 
+		<mx:Image x="0" y="0" source="Images/login.jpg" width="601" height="464">		
+		</mx:Image>
+		<mx:Label x="357" y="291" text="用户名："/>
+		<mx:Label x="357" y="319" text="密   码："/>
+		<mx:TextInput x="407" y="290" width="142" id="tbox_username" maxChars="50" text="" enter="Logins()"/>
+		<mx:TextInput x="407" y="318" width="142" id="tbox_password" displayAsPassword="true" maxChars="50" text="" enter="Logins()"/>
+		<mx:Button id="btnLogin" x="495" y="348" label="登 录"/>
+	
+</mx:TitleWindow>

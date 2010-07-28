@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" width="398" height="258" creationComplete="init()"
+	showCloseButton="true" horizontalScrollPolicy="off" verticalScrollPolicy="off"  close="OnClose()">
+<mx:Script source="CartoonPublish_Script.as">
+	
+</mx:Script>
+			<mx:Button label="确定" x="251" y="193" click="OnOK()"/>
+			<mx:Button label="取消" x="320" y="193" click="OnCancel()"/>
+			<mx:List x="10" y="25" width="129" id="srcList" labelField="SUBNAME" focusIn="OnSrcFocus()"></mx:List>
+			<mx:List x="233" y="25" width="135" id="dstList" labelField="SUBNAME" focusIn="OnDstFocus()"></mx:List>
+			<mx:Button x="159" y="66" label="增加" width="60" click="OnAdd()"/>
+			<mx:Button x="159.5" y="105" label="移除" width="59" click="OnRemove()"/>
+			<mx:Label x="10" y="-1" text="可选发布站点："/>
+			<mx:Label x="219" y="-1" text="已选发布站点："/>
+	
+</mx:TitleWindow>

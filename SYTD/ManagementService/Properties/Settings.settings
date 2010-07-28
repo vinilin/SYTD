@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ManagementService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ManagementService_fileOperate_fileOperate" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/spat/fileOperate.asmx</Value>
+    </Setting>
+    <Setting Name="ManagementService_FT_MasterControl" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.151/sm/masterControl.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

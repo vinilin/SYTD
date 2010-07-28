@@ -1,0 +1,5 @@
+F:\SYTD\FileShareCommon\bin\Release\FileShareCommon.dll
+F:\SYTD\FileShareCommon\bin\Release\FileShareCommon.pdb
+F:\SYTD\FileShareCommon\obj\Release\ResolveAssemblyReference.cache
+F:\SYTD\FileShareCommon\obj\Release\FileShareCommon.dll
+F:\SYTD\FileShareCommon\obj\Release\FileShareCommon.pdb

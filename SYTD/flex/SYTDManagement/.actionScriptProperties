@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionScriptProperties mainApplicationPath="SYTDManagement.mxml" version="3">
+<compiler additionalCompilerArguments="-services &quot;..\..\..\SYTDManagement\WEB-INF\flex\services-config.xml&quot; -locale en_US" copyDependentFiles="true" enableModuleDebug="true" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersion="9.0.28" htmlPlayerVersionCheck="true" outputFolderLocation="D:/work/SYTD/SYTDManagement/SYTDManagement-DEBUG" outputFolderPath="bin-debug" rootURL="http://localhost/SYTDManagement/SYTDManagement-DEBUG" sourceFolderPath="src" strict="true" useApolloConfig="false" verifyDigests="true" warn="true">
+<compilerSourcePath/>
+<libraryPath defaultLinkType="3">
+<libraryPathEntry kind="4" path=""/>
+<libraryPathEntry kind="1" linkType="1" path="libs"/>
+</libraryPath>
+<sourceAttachmentPath/>
+</compiler>
+<applications>
+<application path="SYTDManagement.mxml"/>
+</applications>
+<modules>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Progress/UploadProgressList.swf" optimize="true" sourcePath="src/SubModule/Progress/UploadProgressList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Movie/MovieAudit/MovieAuditList.swf" optimize="true" sourcePath="src/SubModule/Movie/MovieAudit/MovieAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Notify/NotifyAudit/NotifyAuditList.swf" optimize="true" sourcePath="src/SubModule/Notify/NotifyAudit/NotifyAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/SystemLog/LogList.swf" optimize="true" sourcePath="src/SubModule/System/SystemLog/LogList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Notify/Notify/NotifyList.swf" optimize="true" sourcePath="src/SubModule/Notify/Notify/NotifyList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Music/MusicAudit/MusicAuditList.swf" optimize="true" sourcePath="src/SubModule/Music/MusicAudit/MusicAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Cartoon/CartoonAudit/CartoonAuditList.swf" optimize="true" sourcePath="src/SubModule/Cartoon/CartoonAudit/CartoonAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Article/Article/ArticleList.swf" optimize="true" sourcePath="src/SubModule/Article/Article/ArticleList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Cartoon/Cartoon/CartoonList.swf" optimize="true" sourcePath="src/SubModule/Cartoon/Cartoon/CartoonList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/PublishType/PublishTypeList.swf" optimize="true" sourcePath="src/SubModule/System/PublishType/PublishTypeList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/QjLmManageUser/QjLmUserList.swf" optimize="true" sourcePath="src/SubModule/System/QjLmManageUser/QjLmUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/KqfwSHManageUser/KqfwSHUserList.swf" optimize="true" sourcePath="src/SubModule/System/KqfwSHManageUser/KqfwSHUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/DefaultLink/Link/LinkList.swf" optimize="true" sourcePath="src/SubModule/DefaultLink/Link/LinkList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Music/Music/MusicList.swf" optimize="true" sourcePath="src/SubModule/Music/Music/MusicList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Article_Kqfw/ArticleAudit/KqfwArticleAuditList.swf" optimize="true" sourcePath="src/SubModule/Article_Kqfw/ArticleAudit/KqfwArticleAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/SubSection/SubList.swf" optimize="true" sourcePath="src/SubModule/System/SubSection/SubList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/KQFWLMManageUser/KqfwLmUserList.swf" optimize="true" sourcePath="src/SubModule/System/KQFWLMManageUser/KqfwLmUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/KqfwKind/KqfwKindList.swf" optimize="true" sourcePath="src/SubModule/System/KqfwKind/KqfwKindList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/SystemKind1/KindList.swf" optimize="true" sourcePath="src/SubModule/System/SystemKind1/KindList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/KQFWZLMManageUser/KqfwZLmUserList.swf" optimize="true" sourcePath="src/SubModule/System/KQFWZLMManageUser/KqfwZLmUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/SystemManageUser/SystemUserList.swf" optimize="true" sourcePath="src/SubModule/System/SystemManageUser/SystemUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/PasswordSet.swf" optimize="true" sourcePath="src/SubModule/System/PasswordSet.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/SubManageUser/UserList.swf" optimize="true" sourcePath="src/SubModule/System/SubManageUser/UserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/DefaultLink/LinkAudit/LinkAuditList.swf" optimize="true" sourcePath="src/SubModule/DefaultLink/LinkAudit/LinkAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Software/Software/SoftList.swf" optimize="true" sourcePath="src/SubModule/Software/Software/SoftList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/SubIpDivision/SubIpList.swf" optimize="true" sourcePath="src/SubModule/System/SubIpDivision/SubIpList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/ManagementUser/ManagementUserList.swf" optimize="true" sourcePath="src/SubModule/System/ManagementUser/ManagementUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Software/SoftwareAudit/SoftAuditList.swf" optimize="true" sourcePath="src/SubModule/Software/SoftwareAudit/SoftAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Movie/Movie/MovieList.swf" optimize="true" sourcePath="src/SubModule/Movie/Movie/MovieList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Progress/ProgressList.swf" optimize="true" sourcePath="src/SubModule/Progress/ProgressList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/FzLmManageUser/FzLmUserList.swf" optimize="true" sourcePath="src/SubModule/System/FzLmManageUser/FzLmUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Article_Kqfw/Article/KqfwArticleList.swf" optimize="true" sourcePath="src/SubModule/Article_Kqfw/Article/KqfwArticleList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/Article/ArticleAudit/ArticleAuditList.swf" optimize="true" sourcePath="src/SubModule/Article/ArticleAudit/ArticleAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/KQFWFZManageUser/KqfwFzUserList.swf" optimize="true" sourcePath="src/SubModule/System/KQFWFZManageUser/KqfwFzUserList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/VidioNews/VidioNews/NewsList.swf" optimize="true" sourcePath="src/SubModule/VidioNews/VidioNews/NewsList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/VidioNews/VidioNewsAudit/NewsAuditList.swf" optimize="true" sourcePath="src/SubModule/VidioNews/VidioNewsAudit/NewsAuditList.mxml"/>
+<module application="src/SYTDManagement.mxml" destPath="SubModule/System/KQFWManageUser1/KqfwUserList.swf" optimize="true" sourcePath="src/SubModule/System/KQFWManageUser1/KqfwUserList.mxml"/>
+</modules>
+<buildCSSFiles/>
+</actionScriptProperties>

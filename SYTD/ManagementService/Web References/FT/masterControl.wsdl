@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/SM" xmlns:s1="http://localhost/FSM" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://localhost/SM" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/SM">
+      <s:import namespace="http://localhost/FSM" />
+      <s:element name="CommitMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="movieInfo" type="tns:Movie" />
+            <s:element minOccurs="0" maxOccurs="1" name="fset" type="s1:FileSet" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BaseItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Owner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birth" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PublishType" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Brief" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext8" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Movie">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Player" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Director" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CommitMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitMovieResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryFileSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryFileSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryFileSetResult" type="s1:FileSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Audit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="rst" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="reson" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="audiMan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CommitCartoon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="cartoonInfo" type="tns:Cartoon" />
+            <s:element minOccurs="0" maxOccurs="1" name="fset" type="s1:FileSet" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cartoon">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CommitCartoonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitCartoonResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitMusic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="musicInfo" type="tns:Music" />
+            <s:element minOccurs="0" maxOccurs="1" name="fset" type="s1:FileSet" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Music">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Singer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CommitMusicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitMusicResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitSoft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="softwarInfo" type="tns:Software" />
+            <s:element minOccurs="0" maxOccurs="1" name="fset" type="s1:FileSet" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Software">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manufacturer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CommitSoftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitSoftResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveCartoon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCartoonResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveSoft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveSoftResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveMusic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMusicResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateFileSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s1:FileSet" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFileSetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="movieInfo" type="tns:Movie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMusic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="musicInfo" type="tns:Music" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMusicResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateCartoon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="cartoonInfo" type="tns:Cartoon" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCartoonResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateSoft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="softInfo" type="tns:Software" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSoftResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dst" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishMusic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dst" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PublishMusicResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishSoft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dst" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PublishSoftResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishCartoon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dst" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PublishCartoonResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/FSM">
+      <s:complexType name="FileSet">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ready" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="File" type="s1:ArrayOfFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="s1:File" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="File">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="FileSetID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowIndex" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CommitMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitMovie" />
+  </wsdl:message>
+  <wsdl:message name="CommitMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryFileSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryFileSet" />
+  </wsdl:message>
+  <wsdl:message name="QueryFileSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryFileSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuditSoapIn">
+    <wsdl:part name="parameters" element="tns:Audit" />
+  </wsdl:message>
+  <wsdl:message name="AuditSoapOut">
+    <wsdl:part name="parameters" element="tns:AuditResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitCartoonSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitCartoon" />
+  </wsdl:message>
+  <wsdl:message name="CommitCartoonSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitCartoonResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitMusicSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitMusic" />
+  </wsdl:message>
+  <wsdl:message name="CommitMusicSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitMusicResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitSoftSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitSoft" />
+  </wsdl:message>
+  <wsdl:message name="CommitSoftSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitSoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveMovie" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCartoonSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveCartoon" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCartoonSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveCartoonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveSoftSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveSoft" />
+  </wsdl:message>
+  <wsdl:message name="RemoveSoftSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveSoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMusicSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveMusic" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMusicSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveMusicResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFileSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFileSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFileSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMovie" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMusicSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMusic" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMusicSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMusicResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCartoonSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCartoon" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCartoonSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCartoonResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoftSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSoft" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoftSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishMovie" />
+  </wsdl:message>
+  <wsdl:message name="PublishMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishMusicSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishMusic" />
+  </wsdl:message>
+  <wsdl:message name="PublishMusicSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishMusicResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoftSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishSoft" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoftSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishSoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishCartoonSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishCartoon" />
+  </wsdl:message>
+  <wsdl:message name="PublishCartoonSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishCartoonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MasterControlSoap">
+    <wsdl:operation name="CommitMovie">
+      <wsdl:input message="tns:CommitMovieSoapIn" />
+      <wsdl:output message="tns:CommitMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryFileSet">
+      <wsdl:input message="tns:QueryFileSetSoapIn" />
+      <wsdl:output message="tns:QueryFileSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Audit">
+      <wsdl:input message="tns:AuditSoapIn" />
+      <wsdl:output message="tns:AuditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitCartoon">
+      <wsdl:input message="tns:CommitCartoonSoapIn" />
+      <wsdl:output message="tns:CommitCartoonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitMusic">
+      <wsdl:input message="tns:CommitMusicSoapIn" />
+      <wsdl:output message="tns:CommitMusicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitSoft">
+      <wsdl:input message="tns:CommitSoftSoapIn" />
+      <wsdl:output message="tns:CommitSoftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMovie">
+      <wsdl:input message="tns:RemoveMovieSoapIn" />
+      <wsdl:output message="tns:RemoveMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartoon">
+      <wsdl:input message="tns:RemoveCartoonSoapIn" />
+      <wsdl:output message="tns:RemoveCartoonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSoft">
+      <wsdl:input message="tns:RemoveSoftSoapIn" />
+      <wsdl:output message="tns:RemoveSoftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMusic">
+      <wsdl:input message="tns:RemoveMusicSoapIn" />
+      <wsdl:output message="tns:RemoveMusicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileSet">
+      <wsdl:input message="tns:UpdateFileSetSoapIn" />
+      <wsdl:output message="tns:UpdateFileSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovie">
+      <wsdl:input message="tns:UpdateMovieSoapIn" />
+      <wsdl:output message="tns:UpdateMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMusic">
+      <wsdl:input message="tns:UpdateMusicSoapIn" />
+      <wsdl:output message="tns:UpdateMusicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartoon">
+      <wsdl:input message="tns:UpdateCartoonSoapIn" />
+      <wsdl:output message="tns:UpdateCartoonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoft">
+      <wsdl:input message="tns:UpdateSoftSoapIn" />
+      <wsdl:output message="tns:UpdateSoftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishMovie">
+      <wsdl:input message="tns:PublishMovieSoapIn" />
+      <wsdl:output message="tns:PublishMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <wsdl:input message="tns:PublishMusicSoapIn" />
+      <wsdl:output message="tns:PublishMusicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <wsdl:input message="tns:PublishSoftSoapIn" />
+      <wsdl:output message="tns:PublishSoftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <wsdl:input message="tns:PublishCartoonSoapIn" />
+      <wsdl:output message="tns:PublishCartoonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MasterControlSoap" type="tns:MasterControlSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommitMovie">
+      <soap:operation soapAction="http://localhost/SM/CommitMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFileSet">
+      <soap:operation soapAction="http://localhost/SM/QueryFileSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Audit">
+      <soap:operation soapAction="http://localhost/SM/Audit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitCartoon">
+      <soap:operation soapAction="http://localhost/SM/CommitCartoon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitMusic">
+      <soap:operation soapAction="http://localhost/SM/CommitMusic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitSoft">
+      <soap:operation soapAction="http://localhost/SM/CommitSoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMovie">
+      <soap:operation soapAction="http://localhost/SM/RemoveMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartoon">
+      <soap:operation soapAction="http://localhost/SM/RemoveCartoon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSoft">
+      <soap:operation soapAction="http://localhost/SM/RemoveSoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMusic">
+      <soap:operation soapAction="http://localhost/SM/RemoveMusic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileSet">
+      <soap:operation soapAction="http://localhost/SM/UpdateFileSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovie">
+      <soap:operation soapAction="http://localhost/SM/UpdateMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMusic">
+      <soap:operation soapAction="http://localhost/SM/UpdateMusic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartoon">
+      <soap:operation soapAction="http://localhost/SM/UpdateCartoon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoft">
+      <soap:operation soapAction="http://localhost/SM/UpdateSoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMovie">
+      <soap:operation soapAction="http://localhost/SM/PublishMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <soap:operation soapAction="http://localhost/SM/PublishMusic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <soap:operation soapAction="http://localhost/SM/PublishSoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <soap:operation soapAction="http://localhost/SM/PublishCartoon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MasterControlSoap12" type="tns:MasterControlSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommitMovie">
+      <soap12:operation soapAction="http://localhost/SM/CommitMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFileSet">
+      <soap12:operation soapAction="http://localhost/SM/QueryFileSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Audit">
+      <soap12:operation soapAction="http://localhost/SM/Audit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitCartoon">
+      <soap12:operation soapAction="http://localhost/SM/CommitCartoon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitMusic">
+      <soap12:operation soapAction="http://localhost/SM/CommitMusic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitSoft">
+      <soap12:operation soapAction="http://localhost/SM/CommitSoft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMovie">
+      <soap12:operation soapAction="http://localhost/SM/RemoveMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartoon">
+      <soap12:operation soapAction="http://localhost/SM/RemoveCartoon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSoft">
+      <soap12:operation soapAction="http://localhost/SM/RemoveSoft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMusic">
+      <soap12:operation soapAction="http://localhost/SM/RemoveMusic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileSet">
+      <soap12:operation soapAction="http://localhost/SM/UpdateFileSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovie">
+      <soap12:operation soapAction="http://localhost/SM/UpdateMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMusic">
+      <soap12:operation soapAction="http://localhost/SM/UpdateMusic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartoon">
+      <soap12:operation soapAction="http://localhost/SM/UpdateCartoon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoft">
+      <soap12:operation soapAction="http://localhost/SM/UpdateSoft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMovie">
+      <soap12:operation soapAction="http://localhost/SM/PublishMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <soap12:operation soapAction="http://localhost/SM/PublishMusic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <soap12:operation soapAction="http://localhost/SM/PublishSoft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <soap12:operation soapAction="http://localhost/SM/PublishCartoon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MasterControl">
+    <wsdl:port name="MasterControlSoap" binding="tns:MasterControlSoap">
+      <soap:address location="http://localhost/sm/masterControl.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MasterControlSoap12" binding="tns:MasterControlSoap12">
+      <soap12:address location="http://localhost/sm/masterControl.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

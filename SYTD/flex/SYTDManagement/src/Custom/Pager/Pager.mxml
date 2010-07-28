@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%" height="100%" creationComplete="init()">
+	<mx:Metadata>
+		[Event(name="change",type="flash.events.Event")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			private var _currentPage:int=0;
+			private var _itemTotal:int=0;
+			private var _pageSize:int=20;
+			private var _pageTotal:int=0;
+			private var _currentDivision:int=0;
+			private var _divisionTotal:int=0;
+			private var _show:Boolean=false;
+			private function init():void
+			{
+				this.lbtn_fristPage.addEventListener(MouseEvent.CLICK,OnFristPage);
+				this.lbtn_lastPage.addEventListener(MouseEvent.CLICK,OnLastPage);
+				this.lbtn_prePage.addEventListener(MouseEvent.CLICK,OnPrePage);
+				this.lbtn_nextPage.addEventListener(MouseEvent.CLICK,OnNextPage);
+				this.lbtn_preDivision.addEventListener(MouseEvent.CLICK,OnPreDivision);
+				this.lbtn_nextDivision.addEventListener(MouseEvent.CLICK,OnNextDivision);
+				this.lbtn_page1.addEventListener(MouseEvent.CLICK,OnPage1);
+				this.lbtn_page2.addEventListener(MouseEvent.CLICK,OnPage2);
+				this.lbtn_page3.addEventListener(MouseEvent.CLICK,OnPage3);
+				this.lbtn_page4.addEventListener(MouseEvent.CLICK,OnPage4);
+				this.lbtn_page5.addEventListener(MouseEvent.CLICK,OnPage5);
+				/* this.lbtn_page6.addEventListener(MouseEvent.CLICK,OnPage6);
+				this.lbtn_page7.addEventListener(MouseEvent.CLICK,OnPage7);
+				this.lbtn_page8.addEventListener(MouseEvent.CLICK,OnPage8);
+				this.lbtn_page9.addEventListener(MouseEvent.CLICK,OnPage9);
+				this.lbtn_page10.addEventListener(MouseEvent.CLICK,OnPage10); */
+			}
+			
+			public function set currentPage(val:int):void
+			{
+				this._currentPage=val;	
+				//invalidateProperties();
+			}
+			public function set itemTotal(val:int):void
+			{
+				this._itemTotal=val;
+				invalidateProperties();
+			}
+			public function get itemTotal():int
+			{
+				return this._itemTotal;
+			}
+			public function set pageSize(val:int):void
+			{
+				this._pageSize=val;
+				//invalidateProperties();
+			}
+			public function set show(val:Boolean):void
+			{
+				this._show=val;				
+				//invalidateProperties();
+			}
+			public function get currentPage():int
+			{
+				return this._currentPage;
+			}
+			override protected function commitProperties():void
+			{
+				pagerBind();
+			}
+			public function pagerBind():void
+			{
+				if (this._show)
+				{
+					hboxPager.visible=true;
+					if ((_itemTotal%_pageSize) == 0)
+					{
+						this._pageTotal=this._itemTotal/this._pageSize;
+					} 	
+					else
+					{
+						this._pageTotal=int(this._itemTotal/this._pageSize) + 1;
+					}
+					if (this._currentPage>this._pageTotal-1)
+					{
+						this._currentPage=this._pageTotal-1;
+					}
+					this.lbSummary.text="共"+this._itemTotal.toString()+"条数据，"+this._pageTotal+"页，每页"+this._pageSize+"条";
+					if ((_pageTotal%10)==0)
+					{
+						//this._divisionTotal=this._pageTotal/10;
+						this._divisionTotal=this._pageTotal/5;
+					}	
+					else
+					{
+						//this._divisionTotal=int(this._pageTotal/10)+1;	
+						this._divisionTotal=int(this._pageTotal/5)+1;
+					}
+					bind();
+				}
+				else
+				{
+					hboxPager.visible=false;
+				}
+			}
+			
+			private function bind():void
+			{
+				//this._currentDivision=int(this._currentPage/10);
+				this._currentDivision=int(this._currentPage/5);
+				this.lbtn_fristPage.visible=true;
+				this.lbtn_lastPage.visible=true;
+				this.lbtn_prePage.visible=true;
+				this.lbtn_nextPage.visible=true;
+				this.lbtn_preDivision.visible=true;
+				this.lbtn_nextDivision.visible=true;
+				this.lbtn_page1.visible=true;
+				this.lbtn_page2.visible=true;
+				this.lbtn_page3.visible=true;
+				this.lbtn_page4.visible=true;
+				this.lbtn_page5.visible=true;
+				/* this.lbtn_page6.visible=true;
+				this.lbtn_page7.visible=true;
+				this.lbtn_page8.visible=true;
+				this.lbtn_page9.visible=true;
+				this.lbtn_page10.visible=true; */
+						
+				this.lbtn_fristPage.enabled=true;
+				this.lbtn_lastPage.enabled=true;
+				this.lbtn_prePage.enabled=true;
+				this.lbtn_nextPage.enabled=true;
+				this.lbtn_preDivision.enabled=true;
+				this.lbtn_nextDivision.enabled=true;
+				this.lbtn_page1.enabled=true;
+				this.lbtn_page2.enabled=true;
+				this.lbtn_page3.enabled=true;
+				this.lbtn_page4.enabled=true;
+				this.lbtn_page5.enabled=true;
+				/* this.lbtn_page6.enabled=true;
+				this.lbtn_page7.enabled=true;
+				this.lbtn_page8.enabled=true;
+				this.lbtn_page9.enabled=true;
+				this.lbtn_page10.enabled=true; */
+						
+				this.lbtn_page1.label=((this._currentDivision * 5) + 1).toString();
+				this.lbtn_page2.label=((this._currentDivision * 5) + 2).toString();
+				this.lbtn_page3.label=((this._currentDivision * 5) + 3).toString();
+				this.lbtn_page4.label=((this._currentDivision * 5) + 4).toString();
+				this.lbtn_page5.label=((this._currentDivision * 5) + 5).toString();
+				/* this.lbtn_page6.label=((this._currentDivision * 10) + 6).toString();
+				this.lbtn_page7.label=((this._currentDivision * 10) + 7).toString();
+				this.lbtn_page8.label=((this._currentDivision * 10) + 8).toString();
+				this.lbtn_page9.label=((this._currentDivision * 10) + 9).toString();
+				this.lbtn_page10.label=((this._currentDivision * 10) + 10).toString(); */
+				
+				if (this._currentDivision==0)
+				{
+					this.lbtn_preDivision.enabled=false;
+					//this.lbtn_prePage.enabled=false;
+				}
+				if (this._currentDivision==this._divisionTotal-1 || this._divisionTotal==0 || this._itemTotal==0)
+				{
+					this.lbtn_nextDivision.enabled=false;
+					//this.lbtn_nextPage.enabled=false;
+					//判断哪些也该屏蔽
+					//var temp:Number=_pageTotal%10;
+					var temp:Number=_pageTotal%5;
+					if ((temp)!=0 || this._itemTotal==0)
+					{
+						this.lbtn_page1.visible=false;
+						this.lbtn_page2.visible=false;
+						this.lbtn_page3.visible=false;
+						this.lbtn_page4.visible=false;
+						this.lbtn_page5.visible=false;
+						/* this.lbtn_page6.visible=false;
+						this.lbtn_page7.visible=false;
+						this.lbtn_page8.visible=false;
+						this.lbtn_page9.visible=false;
+						this.lbtn_page10.visible=false; */
+						if (temp>=1)
+						{
+							this.lbtn_page1.visible=true;
+						}
+						if (temp>=2)
+						{
+							this.lbtn_page2.visible=true;
+						}
+						if (temp>=3)
+						{
+							this.lbtn_page3.visible=true;
+						}
+						if (temp>=4)
+						{
+							this.lbtn_page4.visible=true;
+						}
+						/* if (temp>=5)
+						{
+							this.lbtn_page5.visible=true;
+						}
+						if (temp>=6)
+						{
+							this.lbtn_page6.visible=true;
+						}
+						if (temp>=7)
+						{
+							this.lbtn_page7.visible=true;
+						}
+						if (temp>=8)
+						{
+							this.lbtn_page8.visible=true;
+						}
+						if (temp>=9)
+						{
+							this.lbtn_page9.visible=true;
+						} */
+					}
+				}
+				
+				
+				if (this._currentPage==0)
+				{
+					this.lbtn_prePage.enabled=false;
+					this.lbtn_fristPage.enabled=false;
+				}
+				if (this._currentPage==this._pageTotal-1 || this._pageTotal==0)
+				{
+					this.lbtn_lastPage.enabled=false;
+					this.lbtn_nextPage.enabled=false;
+				}
+				
+				//var temppage:int=this._currentPage%10;
+				var temppage:int=this._currentPage%5;
+				if (temppage==0)
+				{
+					this.lbtn_page1.enabled=false;
+				}
+				else if(temppage==1)
+				{
+					this.lbtn_page2.enabled=false;
+				}
+				else if(temppage==2)
+				{
+					this.lbtn_page3.enabled=false;
+				}
+				else if(temppage==3)
+				{
+					this.lbtn_page4.enabled=false;
+				}
+				else if(temppage==4)
+				{
+					this.lbtn_page5.enabled=false;
+				}
+				/* else if(temppage==5)
+				{
+					this.lbtn_page6.enabled=false;
+				}
+				else if(temppage==6)
+				{
+					this.lbtn_page7.enabled=false;
+				}
+				else if(temppage==7)
+				{
+					this.lbtn_page8.enabled=false;
+				}
+				else if(temppage==8)
+				{
+					this.lbtn_page9.enabled=false;
+				}
+				else if(temppage==9)
+				{
+					this.lbtn_page10.enabled=false;
+				} */
+			}
+			private function OnFristPage(evt:MouseEvent):void
+			{
+				//this._currentDivision=0;
+				this._currentPage=0;
+				dispatchEvent( new Event(Event.CHANGE));
+				
+			}
+			private function OnLastPage(evt:MouseEvent):void
+			{
+				//this._currentDivision=this._divisionTotal-1;
+				this._currentPage=this._pageTotal-1;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPrePage(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentPage-1;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnNextPage(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentPage+1;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPreDivision(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*5-1;
+				//this._currentDivision=this._currentDivision-1;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnNextDivision(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*5+5;
+				//this._currentDivision=this._currentDivision+1;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage1(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*5+0;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage2(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*5+1;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage3(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*5+2;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage4(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*5+3;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage5(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*5+4;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			/* private function OnPage6(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*10+5;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage7(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*10+6;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage8(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*10+7;
+				dispatchEvent( new Event(Event.CHANGE));
+			}
+			private function OnPage9(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*10+8;
+				dispatchEvent( new Event(Event.CHANGE));	
+			}
+			private function OnPage10(evt:MouseEvent):void
+			{
+				this._currentPage=this._currentDivision*10+9;
+				dispatchEvent( new Event(Event.CHANGE));	
+			} */
+		]]>
+	</mx:Script>
+	<mx:HBox id="hboxPager" height="24" verticalAlign="bottom" paddingBottom="0" paddingTop="0" horizontalGap="2">
+		<mx:Label id="lbSummary" text="" />
+		<mx:LinkButton id="lbtn_fristPage" label="9" styleName="pager" toolTip="第一页" paddingLeft="0" paddingRight="0" />
+		<mx:LinkButton id="lbtn_preDivision" label="7" styleName="pager" toolTip="前5页" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_prePage" label="3" styleName="pager" toolTip="前一页" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page1" label="1" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page2" label="2" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page3" label="3" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page4" label="4" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page5" label="5" paddingLeft="0" paddingRight="0"  />
+		<!--<mx:LinkButton id="lbtn_page6" label="6" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page7" label="7" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page8" label="8" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page9" label="9" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_page10" label="10" paddingLeft="0" paddingRight="0"  />-->
+		<mx:LinkButton id="lbtn_nextPage" label="4" styleName="pager" toolTip="后一页" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_nextDivision" label="8" styleName="pager" toolTip="后5页" paddingLeft="0" paddingRight="0"  />
+		<mx:LinkButton id="lbtn_lastPage" label=":" styleName="pager" toolTip="最后一页"  paddingLeft="0" paddingRight="0" />
+	</mx:HBox>
+</mx:Canvas>
+

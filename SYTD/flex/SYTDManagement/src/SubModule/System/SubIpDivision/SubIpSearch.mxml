@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="284" height="154" showCloseButton="true" title="IP查询">
+	<mx:Script source="SubIpSearch_Script.as"/>
+	<mx:Label x="21" y="21" text="站点："/>
+	<mx:Label x="21" y="51" text="IP："/>
+	<mx:TextInput x="59" y="50" id="tbox_IP" maxChars="50" width="181"/>
+	<mx:Button x="172" y="80" label="查询" width="68" id="btnSearch"/>
+	<mx:ComboBox x="59" y="18" width="181" id="cbox_sub"></mx:ComboBox>
+	
+</mx:TitleWindow>

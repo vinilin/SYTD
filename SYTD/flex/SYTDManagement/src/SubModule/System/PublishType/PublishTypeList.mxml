@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" horizontalScrollPolicy="off" verticalScrollPolicy="off" 
+	xmlns:checkboxClumns="Custom.Renderer.*" xmlns:Pager="Custom.Pager.*">
+	<mx:Script source="PublishTypeList_Script.as"/>
+	<mx:ApplicationControlBar id="controlBar_Title" width="100%">
+		<mx:Label id="lbTitle" text="◎  "/>
+	</mx:ApplicationControlBar>
+		<mx:VBox horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%" height="100%" verticalGap="0" paddingLeft="1" paddingBottom="1" paddingRight="1" paddingTop="1">
+			<mx:HBox id="ToolBar" styleName="ToolBar" horizontalScrollPolicy="off" verticalScrollPolicy="off"  width="100%" paddingLeft="10" horizontalAlign="left" horizontalGap="10" height="28">
+				<mx:Button id="btnAdd" label="增加" styleName="ToolBarInBtn" fontSize="12"/>
+				<mx:Button id="btnUpdate" label="修改" styleName="ToolBarInBtn" fontSize="12"/>
+				<mx:Button id="btnDelete" label="删除" styleName="ToolBarInBtn" fontSize="12"/>
+				<!--<mx:Label text="拖动行可改变显示顺序" color="red" />-->		
+			</mx:HBox>
+			<mx:DataGrid id="dg"  width="100%" height="259" dataProvider="{_searchResult}" doubleClickEnabled="true"
+				 horizontalScrollPolicy="on" verticalScrollPolicy="on" editable="false" sortableColumns="true" allowMultipleSelection="true"
+				 dragEnabled="true" dragMoveEnabled="true" dropEnabled="true">
+				 	<mx:columns>
+					<mx:DataGridColumn width="30" sortable="false" dataField="ISCHECKED" headerRenderer="{hr}" itemRenderer="Custom.Renderer.CenteredCheckBoxItemRenderer" /><!---->
+					<mx:DataGridColumn headerText="类别名称" dataField="NAME" width="200"/>
+					<mx:DataGridColumn headerText="类别ID" dataField="ID" width="100"/>
+					<!--<mx:DataGridColumn headerText="显示顺序" dataField="LISTORDER" width="80"/>-->	
+
+				</mx:columns>
+			</mx:DataGrid>
+		</mx:VBox>
+</mx:Module>

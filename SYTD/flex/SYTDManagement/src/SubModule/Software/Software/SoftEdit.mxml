@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" 
+	width="618" height="580" showCloseButton="true" creationComplete="init()"
+    horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	<mx:Script source="SoftEdit_Script.as" >
+	</mx:Script>
+	<mx:Label x="22" y="20" text="软件名称"/>
+	<mx:Label x="22" y="80" text="版本号："/>
+	<mx:Label x="22" y="48" text="开发公司："/>
+	<mx:TextInput x="75" y="18" width="496" id="tbox_title" maxChars="32"/>
+	<mx:TextInput x="75" y="78" width="198.5" id="tbox_version" maxChars="32"/>
+	<mx:TextInput x="75" y="46" width="496" id="tbox_director" maxChars="32"/>
+	<mx:Label x="22" y="110" text="类别："/>
+	<mx:Label x="22" y="139" text="介绍："/>
+	<mx:ComboBox x="75" y="108" width="198.5" id="cbox_publishType"></mx:ComboBox>
+	<mx:Label x="569" y="20" text="*" color="#FC1B04"/>
+	<mx:Label x="294" y="109" text="发布时间："/>
+	<mx:Label x="294" y="80" text="语言"/>
+	<mx:TextInput x="349" y="107" width="222" id="tbox_issueDate" maxChars="32"/>
+	<mx:TextInput x="349" y="78" width="222" id="tbox_lang" maxChars="32"/>
+	<mx:TextArea x="75" y="141" width="496" height="274" wordWrap="true" maxChars="1024" id="tbox_brief"/>
+	<mx:Button x="506" y="423" label="保存" id="btnSave" width="65"/>
+	<mx:Button x="412" y="423" label="图片上传" id="btnPic"/>
+	<mx:Button x="315" y="423" label="文件列表" id="btnFileList"/>
+	<mx:CheckBox x="210" y="423" label="重传文件" id="chbox_reUpload" height="22"/>
+	<mx:Label x="13" y="455" text="审核失败原因：" id="lb_auditResult"/>
+	<mx:Text x="92" y="453" width="479" height="77" id="tbox_auditReason"/>
+	
+</mx:TitleWindow>

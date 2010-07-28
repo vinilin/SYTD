@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" textAlign="left" borderStyle="solid" borderColor="#AEE8F7">
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.CheckBox;
+			import mx.collections.ArrayCollection;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.remoting.mxml.RemoteObject;
+			private var _subCodes:String="";
+			private var _subNames:String="";
+			private var _subCodeArray:Array=new Array();
+			private var _subNameArray:Array=new Array();
+			private var _remote:RemoteObject;
+			public function set subCodes(val:String):void
+			{
+				this._subCodes=val;
+				if (val!=null && val!="")
+				{
+					var tempArray:Array=val.split(",");
+					for(var i:int=0;i<tempArray.length;i++)
+					{
+						if (tempArray[i]!="")
+						{
+							_subCodeArray.push(tempArray[i]);
+						}
+					}
+				}
+			}
+			public function get subCodes():String
+			{
+				_subCodes="";
+				for(var i:int=0;i<_subCodeArray.length;i++)
+				{
+					_subCodes+=_subCodeArray[i];
+					if (i!=_subCodeArray.length-1){_subCodes+=","}
+				}
+				return this._subCodes;
+			}
+			public function get subNames():String
+			{
+				_subNames="";
+				for(var i:int=0;i<_subNameArray.length;i++)
+				{
+					_subNames+=_subNameArray[i];
+					if (i!=_subNameArray.length-1){_subNames+=","}
+				}
+				return this._subNames;
+			}
+			public function create():void
+			{
+				_remote=new RemoteObject("fluorine");
+				_remote.source="SubSection";
+				_remote.GetAllSubList();
+				_remote.addEventListener(ResultEvent.RESULT,OnResult);
+				_remote.addEventListener(FaultEvent.FAULT,OnFault);
+			}
+			private function OnResult(evt:ResultEvent):void
+			{
+				_remote.removeEventListener(ResultEvent.RESULT,OnResult);
+				_remote.removeEventListener(FaultEvent.FAULT,OnFault);
+				var result:ArrayCollection=_remote.GetAllSubList.lastResult as ArrayCollection;
+				if (result!=null)
+				{
+					for(var i:int=0;i<result.length;i++)
+					{
+						var chbox:CheckBox=new CheckBox();
+						chbox.label=result.source[i].subName;
+						chbox.id="chbox_"+result.source[i].subCode;
+						chbox.addEventListener(Event.CHANGE,OnCheckBoxChange);
+						for(var j:int=0;j<_subCodeArray.length;j++)
+						{
+							if (_subCodeArray[j]==result.source[i].subCode)
+							{
+								chbox.selected=true;
+								_subNameArray.push(result.source[i].subName);
+								break;
+							}
+						}
+						chbox.x=20;
+						chbox.y=i*30+10; 
+						//chbox.width=100;
+						chbox.height=20;
+						//chbox.				
+						this.addChild(chbox);
+					}
+				}
+			}
+			private function OnFault(evt:FaultEvent):void
+			{
+				_remote.removeEventListener(ResultEvent.RESULT,OnResult);
+				_remote.removeEventListener(FaultEvent.FAULT,OnFault);
+			}
+			private function OnCheckBoxChange(evt:Event):void
+			{
+				var chbox:CheckBox=evt.target as CheckBox;
+				var i:int=0;
+				var exists:Boolean=false;
+				if (chbox.selected)
+				{
+					exists=false;
+					for(i=0;i<_subCodeArray.length;i++)
+					{
+						if (_subCodeArray[i]==chbox.id.substr(6))
+						{
+							exists=true;
+							break;
+						}
+					}
+					if (!exists)
+					{
+						_subCodeArray.push(chbox.id.substr(6));
+					}
+					//-----------------------------------------
+					exists=false;
+					for(i=0;i<_subNameArray.length;i++)
+					{
+						if (_subNameArray[i]==chbox.label)
+						{
+							exists=true;
+							break;
+						}
+					}
+					if (!exists)
+					{
+						_subNameArray.push(chbox.label);
+					}
+				}
+				else
+				{
+					exists=false;
+					for(i=0;i<_subCodeArray.length;i++)
+					{
+						if (_subCodeArray[i]==chbox.id.substr(6))
+						{
+							_subCodeArray.splice(i,1);
+							break;
+						}
+					}
+					//-----------------------------------------
+					exists=false;
+					for(i=0;i<_subNameArray.length;i++)
+					{
+						if (_subNameArray[i]==chbox.label)
+						{
+							_subNameArray.splice(i,1);
+							break;
+						}
+					}
+				}
+			}
+			
+		]]>
+	</mx:Script>
+	<!--<mx:VBox id="vbox_sub" width="100%" height="100%" verticalScrollPolicy="on" horizontalScrollPolicy="on"/>-->
+</mx:Canvas>

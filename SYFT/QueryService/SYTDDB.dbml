@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SYTD" Class="SYTDDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=WIN-JT9SDKF2864\SQL2005;Initial Catalog=SYTD;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SYTDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.T_SubSection" Member="T_SubSection">
+    <Type Name="T_SubSection">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="subName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="serverIp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isCenter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

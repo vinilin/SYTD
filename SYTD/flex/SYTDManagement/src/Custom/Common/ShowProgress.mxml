@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="420" height="72" 
+    title="{_task}" paddingLeft="0" paddingRight="0" paddingTop="0" paddingBottom="0" showCloseButton="true"
+    creationComplete="init()" borderColor="#FAD7C5">
+	<mx:Metadata>
+		[Event(name="cancel",type="flash.events.Event")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import mx.events.CloseEvent;
+			import mx.controls.Alert;
+			[Bindable]private var _task:String="";
+			[Bindable]private var _max:int=100;
+			[Bindable]private var _min:int=0;
+			[Bindable]private var _current:int=0;
+			[Bindable]private var _summary:String="";
+			
+			public function set task(val:String):void
+			{
+				_task=val;
+			}
+			public function set max(val:int):void
+			{
+				_max=val;	
+			}
+			public function set min(val:int):void
+			{
+				_min=val;
+			}
+			public function set current(val:int):void
+			{
+				_current=val;
+				pr.setProgress(_current,_max);
+			}
+			public function set summary(val:String):void
+			{
+				_summary=val;	
+			}
+			
+			private function init():void
+			{
+				this.addEventListener(CloseEvent.CLOSE,OnCancel);
+			}
+			private function OnCancel(evt:CloseEvent):void
+			{
+				Alert.show("确定要取消该任务？","系统提示",3,this,AlertHandler);
+			}
+			private function AlertHandler(evt:CloseEvent):void
+			{
+				if (Alert.YES==evt.detail)
+				{
+					dispatchEvent( new Event(Event.CANCEL));
+				}
+			}
+		]]>
+	</mx:Script>
+	<mx:ProgressBar id="pr" label="{_summary}" mode="manual" maximum="{_max}"  minimum="{_min}" x="0" y="0" width="400" themeColor="#CC3300"/>	
+</mx:TitleWindow>
+
+
+

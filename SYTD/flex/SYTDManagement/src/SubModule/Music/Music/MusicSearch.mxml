@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="416" height="294" showCloseButton="true" title="查询">
+	<mx:Script source="MusicSearch_Script.as"/>
+	<mx:Label x="21" y="11" text="增加/修改人："/>
+	<mx:ComboBox x="112" y="8" width="223" id="cbox_addMan"></mx:ComboBox>
+	<mx:Label x="21" y="39" text="增加/修改时间："/>
+	<mx:DateField x="112" y="38" id="df_addStartTime" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1" />
+	<mx:Label x="218" y="39" text="至"/>
+	<mx:DateField x="238" y="38" id="df_addEndTime" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1" />
+	<mx:Label x="21" y="67" text="电影名称："/>
+	<mx:TextInput x="112" y="66" width="224" id="tbox_title"/>
+	<mx:Label x="21" y="124" text="审核人："/>
+	<mx:Label x="21" y="98" text="类型："/>
+	<mx:ComboBox x="112" y="121" width="224" id="cbox_auditMan"></mx:ComboBox>
+	<mx:ComboBox x="112" y="94" width="224" id="cbox_publishType"></mx:ComboBox>
+	<mx:Label x="21" y="152" text="审核/发布时间："/>
+	<mx:DateField x="112" y="151" id="df_auditStartTime" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1" />
+	<mx:Label x="218" y="152" text="至"/>
+	<mx:DateField x="238" y="151" id="df_auditEndTime" formatString="YYYY-MM-DD" monthNames="['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']" dayNames="['日','一','二','三','四','五','六']" firstDayOfWeek="1" />
+	<mx:Label x="21" y="183" text="状态："/>
+	<mx:ComboBox x="112" y="181" width="224" id="cbox_state"></mx:ComboBox>
+	<mx:Button x="268" y="216" label="查询" width="68" id="btnSearch"/>
+	<mx:Label x="338" y="67" text="模糊" color="#FA2401"/>
+	
+</mx:TitleWindow>

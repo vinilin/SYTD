@@ -1,0 +1,257 @@
+/* CSS file */
+CheckBox
+{
+	paddingTop: -20;
+	themeColor: #3BB8F9;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #EFF5FA, #EFF5FA;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	color: #000000;
+}
+/*
+Grid
+{
+	horizontalGap: 0;
+	verticalGap: 0;
+}
+GridRow
+{
+}
+GridItem
+{
+	horizontalScrollPolicy:off;
+	verticalScrollPolicy:off;
+}
+*/
+Button.ToolBarInBtn
+{
+	fillAlphas: 1.0, 1.0;
+	fillColors: #AEE8F7, #AEE8F7, #17CBF8, #17CBF8;
+	borderColor: #04CDFF;
+	themeColor: #0445FF;
+	color: #000000;
+	textRollOverColor: #000000;
+}
+ToolTip
+{
+	fontSize: 12;
+}
+
+List
+{
+	borderColor: #7CC3B1;
+}
+TitleWindow
+{
+	borderColor: #C4EBF5;
+	fontSize: 12;
+	cornerRadius: 4;
+	backgroundAlpha: 1.0;
+	borderAlpha: 0.98;
+}
+
+Application
+{
+	backgroundGradientAlphas: 1.0, 1.0;
+	backgroundGradientColors: #FEFCFC, #FEFCFC;
+	fontSize: 12;
+	fontWeight: normal;
+	color: #0B333C;
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingBottom: 0;
+	paddingTop: 0;
+}
+Module
+{
+	backgroundColor: #FFFFFF;
+	fontSize: 12;
+}
+Button
+{
+	cornerRadius: 3;
+	borderColor: #7CC3B1;
+	fillAlphas: 0.46, 0.8, 1.0, 1.0;
+	fillColors: #479CE4, #479CE4;
+	fontWeight: normal;
+	fontSize: 12;
+	color: #000000;
+	textRollOverColor: #FBFBFC;
+	textSelectedColor: #3E5267;
+	disabledColor: #99A7A7;
+	paddingTop: -20;
+	paddingBottom: -20;
+	horizontalGap: 0;
+	leading: 0;
+}
+TextArea
+{
+	borderStyle: solid;
+	borderColor: #7CC3B1;
+}
+HBox.Title1
+{
+	backgroundColor: #C4EBF5;
+	backgroundAlpha: 1.0;
+	backgroundSize: "100%";
+	fontSize: 12;
+	fontWeight: bold;
+	paddingLeft: 10;
+	paddingRight: 10;
+	paddingTop: 2;
+	paddingBottom: 2;
+	verticalAlign: middle;
+}
+HBox.ToolBar
+{
+	backgroundColor: #C4EBF5;
+	borderStyle: solid;
+	borderColor: #7EC3B2;
+	verticalAlign: middle;	
+	paddingRight: 10;
+	horizontalAlign: left;
+	horizontalGap: 8;
+	paddingTop: -4;
+	paddingBottom: -4;
+}
+ApplicationControlBar
+{
+	cornerRadius: 1;
+	fillAlphas: 0.93, 0.87;
+	fillColors: #94F3F9, #C8E7C8;
+	fontWeight: bold;
+	fontSize: 14;
+	horizontalGap: 0;
+	shadowDistance: 2;
+	paddingLeft: 10;
+	paddingRight: 10;
+	paddingBottom: 2;
+	paddingTop: 2;
+}
+Label
+{
+	fontSize: 12;
+}
+TextInput
+{
+	borderStyle: solid;
+	borderColor: #7CC3B1;
+	fontSize: 12;
+}
+DataGrid
+{
+	borderColor: #B4C6F1;
+	headerColors: #C4EBF5, #DAEAF7;
+	verticalGridLineColor: #DAEAF7;
+	horizontalGridLines: true;
+	horizontalGridLineColor: #DAEAF7; 
+	paddingLeft: 1;
+	paddingRight: 1;
+	paddingBottom: 2;
+	paddingTop: 2;  
+	borderThickness: 1;
+    fontSize: 12;
+	headerStyleName: dataGridHeader;
+	selectionColor: #BCDFF5;
+	rollOverColor: #E0F3FF;
+	alternatingItemColors: #FBFBFB, #FFFFFF;
+	/* verticalAlign: middle;  */
+	leading: 2; 
+}
+
+HScrollBar
+{
+	borderColor: #EAFCF7;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #EAFCF7, #EAFCF7;
+	trackColors: #EAFCF7, #EAFCF7;
+}
+VScrollBar
+{
+	borderColor: #A7FBE4;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #EAFCF7, #EAFCF7;
+	trackColors: #EAFCF7, #EAFCF7;
+}
+Button.pager
+{
+	fillAlphas: 0.0, 0.0, 0.91, 0.9;
+	cornerRadius: 0;
+	color: #25475A;
+	paddingLeft: 0;
+	paddingRight: 0;
+	fontWeight: normal;
+	borderStyle:none;
+}
+LinkButton
+{
+	rollOverColor: #A4D9F8;
+	fontWeight: bold;
+	/*fontFamily: Verdana;*/
+	cornerRadius: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	color: #233F58;
+	textRollOverColor: #FBFBFC;
+	paddingLeft: 0;
+	paddingRight: 0;
+}
+ComboBox
+{
+	dropdownStyleName: comboBoxDropdown;
+	cornerRadius: 1;
+	fontWeight: normal;
+	paddingLeft: 0;
+	paddingRight: 0;
+	borderColor: #7CC3B1;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #FFFFFF, #D6FEEA;
+}
+.comboBoxDropdown
+{
+	borderColor: #7CC3B1;
+	paddingLeft: -1;
+	paddingRight: -1;
+	paddingBottom: -1;
+	paddingTop: -1;
+}
+.dataGridHeader
+{
+	fontWeight: normal;
+	fontSize: 12;
+	fontFamily: Verdana;
+	textAlign: center;
+}
+.dataGridVerticalScrollBar
+{
+	borderColor: #EAFCF7;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #EAFCF7, #EAFCF7;
+	trackColors: #EAFCF7, #EAFCF7;
+}
+.dataGridHorizontalScrollBar
+{
+	borderColor: #EAFCF7;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #EAFCF7, #EAFCF7;
+	trackColors: #EAFCF7, #EAFCF7;
+}
+RadioButton
+{
+	color: #140F0F;
+	textRollOverColor: #140F0F;
+	paddingTop: 0;
+	paddingBottom: 0;
+}
+
+@font-face
+{
+	fontFamily: webdings;
+	src: url("webdings.ttf");
+}
+LinkButton.pager
+{
+	fontFamily: webdings;
+	fontSize: 14;
+}

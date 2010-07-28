@@ -1,0 +1,59 @@
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/default/bg.gif); 
+	font-size:12px;
+}
+table {
+	font-family: "宋体";
+	font-size: 12px;
+}
+TD { FONT-SIZE: 12px; FONT-FAMILY: 宋体;
+    margin-left: 40px;
+} 
+a:link {
+	font-family: "宋体";
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000
+}
+a:visited {
+	font-family: "宋体";
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #0000FF;
+	text-decoration: underline;
+}
+.STYLE1 {color: #FFFFFF}
+.STYLE2 {color: #000000}
+.STYLE4 {color: #000000; font-weight: bold; }
+ .STYLE5 {
+	        font-size: 18pt;
+	        font-weight: bold;
+	        color: #10306b;
+        }
+.button1 {
+	font-size: 12px;
+	width: 60px;
+	height: 21px;
+	background-image: url("images/button1.gif");
+	border: none;
+	padding-top: 3px;
+}
+
+.A1 
+{
+	FONT-SIZE: 9pt; 
+	COLOR: #0000cc;
+	 TEXT-DECORATION:none; }
+ .A1:hover { FONT-SIZE: 9pt; 
+	COLOR: #ff0000; 
+	TEXT-DECORATION: none; } 

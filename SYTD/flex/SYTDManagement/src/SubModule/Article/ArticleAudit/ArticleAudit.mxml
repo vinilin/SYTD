@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="666" height="496" 
+	showCloseButton="true" xmlns:System="Custom.System.*" creationComplete="init()"
+    verticalScrollPolicy="off" horizontalScrollPolicy="off">
+	<mx:Script source="ArticleAudit_Script.as"/>
+	<mx:Label x="10" y="35" text="标题："/>
+	<mx:TextInput id="tbox_title" x="45" y="34" width="576" maxChars="100"/>
+	<mx:Label x="627" y="36" text="*" color="#FE0A04"/>
+	<System:IFrame id="iFrame" width="635" height="350" y="63" x="5"/>
+	<mx:Button id="btnDefaultPic" x="404" y="424" label="首页图片"/>
+	<mx:Button id="btnPub" x="585" y="424" label="发布"/>
+	<mx:Button id="btnNotPub" x="504" y="424" label="不发布"/>
+	<mx:Label x="10" y="9" text="类别："/>
+	<mx:ComboBox x="45" y="7" width="318" id="cbox_kind"></mx:ComboBox>
+	<mx:Label x="10" y="428" text="新闻来源：" id="lb_source"/>
+	<mx:TextInput x="64" y="424" width="280" maxChars="25" id="tbox_source" editable="false" enabled="false"/>
+	<mx:Label x="5" y="70" text="外部地址：" id="lb_Url" visible="false"/>
+	<mx:TextInput x="62" y="67" width="553" id="tbox_Url" visible="false"/>
+	<mx:CheckBox x="361" y="424" label="外部URL" id="ch_URL" height="25" visible="false"/>
+</mx:TitleWindow>

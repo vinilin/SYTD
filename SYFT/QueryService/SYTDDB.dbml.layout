@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SYTDDB">
+  <DataContextMoniker Name="/SYTDDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8e442e2d-837a-41d7-b9b2-f9cc0b8ca610" absoluteBounds="3.25, 1.25, 2, 1.6169661458333331">
+      <DataClassMoniker Name="/SYTDDBDataContext/T_SubSection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4747c06f-d154-4719-a937-c35184ceb72e" absoluteBounds="3.2649999999999997, 1.71, 1.9700000000000002, 1.0569661458333333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

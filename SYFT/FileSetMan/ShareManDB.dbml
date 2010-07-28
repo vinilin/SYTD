@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SYTD" Class="ShareManDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=SYTD;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SYTDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Progress" Member="Progress">
+    <Type Name="Progress">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SrcIp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DstIp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileSetID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="AuditMan" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="total" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="downloaded" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CmmitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FinishDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ext1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

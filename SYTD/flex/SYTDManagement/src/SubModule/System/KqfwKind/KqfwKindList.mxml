@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:checkboxClumns="Custom.Renderer.*" creationComplete="init()">
+	<mx:Script source="KqfwKindList_Script.as" />
+	<mx:ApplicationControlBar id="controlBar_Title" width="100%">
+		<mx:Label id="lbTitle" text="◎  矿区服务 —— 分类管理"/>
+	</mx:ApplicationControlBar>
+	   <mx:HDividedBox id="hdBox" horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%">
+	   	<mx:Panel id="Panel_left" width="100%" height="100%" borderStyle="none" borderThicknessLeft="0" borderThicknessTop="0" borderThicknessBottom="0" borderThicknessRight="0" headerHeight="0">
+	   			<mx:HBox id="ToolBar1" styleName="ToolBar" horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%" paddingLeft="10" horizontalAlign="left" horizontalGap="10" height="28">
+					<mx:Button id="btnAdd1" label="增加" styleName="ToolBarInBtn" fontSize="12"/>
+					<mx:Button id="btnUpdate1" label="修改" styleName="ToolBarInBtn" fontSize="12"/>
+					<mx:Button id="btnDelete1" label="删除" styleName="ToolBarInBtn" fontSize="12"/>
+					<mx:Label text="拖动行可改变显示顺序" color="red" />
+				</mx:HBox>
+				<mx:DataGrid id="dg1" dataProvider="{_searchResult1}" doubleClickEnabled="true"
+					 horizontalScrollPolicy="on" verticalScrollPolicy="on" editable="false" sortableColumns="true" allowMultipleSelection="true"
+					 dragEnabled="true" dragMoveEnabled="true" dropEnabled="true" width="100%">
+					 <mx:columns>
+						<mx:DataGridColumn width="30" sortable="false" dataField="ISCHECKED" headerRenderer="{hr1}" itemRenderer="Custom.Renderer.CenteredCheckBoxItemRenderer" />
+						<mx:DataGridColumn headerText="分站" dataField="SUBNAME" width="80"/>
+						<mx:DataGridColumn headerText="一级类别名称" dataField="TEXT" width="120"/>
+						<mx:DataGridColumn headerText="一级类别代码" dataField="CODE" width="100"/>
+						<mx:DataGridColumn headerText="显示顺序" dataField="LISTORDER" width="60"/>
+					</mx:columns>
+				</mx:DataGrid>
+		</mx:Panel>
+		<mx:Panel id="Panel_right" width="100%" height="100%" borderStyle="none" borderThicknessLeft="0" borderThicknessTop="0" borderThicknessBottom="0" borderThicknessRight="0" headerHeight="0">
+				<mx:HBox id="ToolBar2" styleName="ToolBar" horizontalScrollPolicy="off" verticalScrollPolicy="off"  width="100%" paddingLeft="10" horizontalAlign="left" horizontalGap="10" height="28">
+					<mx:Button id="btnAdd2" label="增加" styleName="ToolBarInBtn" fontSize="12"/>
+					<mx:Button id="btnUpdate2" label="修改" styleName="ToolBarInBtn" fontSize="12"/>
+					<mx:Button id="btnDelete2" label="删除" styleName="ToolBarInBtn" fontSize="12"/>
+					<mx:Label text="拖动行可改变显示顺序" color="red" />		
+				</mx:HBox>
+				<mx:DataGrid id="dg2"  dataProvider="{_searchResult2}" doubleClickEnabled="true"
+					 horizontalScrollPolicy="on" verticalScrollPolicy="on" editable="false" sortableColumns="true" allowMultipleSelection="true"
+					 dragEnabled="true" dragMoveEnabled="true" dropEnabled="true" width="100%">
+					 <mx:columns>
+						<mx:DataGridColumn width="30" sortable="false" dataField="ISCHECKED" headerRenderer="{hr2}" itemRenderer="Custom.Renderer.CenteredCheckBoxItemRenderer" />
+						<mx:DataGridColumn headerText="分站" dataField="SUBNAME" width="80"/>
+						<mx:DataGridColumn headerText="二级类别名称" dataField="TEXT" width="120"/>
+						<mx:DataGridColumn headerText="二级类别代码" dataField="CODE" width="100"/>
+						<mx:DataGridColumn headerText="显示顺序" dataField="LISTORDER" width="60"/>
+					</mx:columns>
+				</mx:DataGrid>
+		</mx:Panel>
+	  </mx:HDividedBox>	
+</mx:Module>

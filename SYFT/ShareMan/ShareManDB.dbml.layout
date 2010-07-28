@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.875" name="ShareManDB">
+  <DataContextMoniker Name="/ShareManDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="33bdfeb8-147a-42c5-8327-164d6b426131" absoluteBounds="0.75, 0.75, 2, 1.6169661458333331">
+      <DataClassMoniker Name="/ShareManDBDataContext/Audit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b09e13d-5cb7-4bce-baa5-01d92d92c132" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0569661458333333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd2e0850-858f-4245-9c2b-74a62065e4d8" absoluteBounds="3.75, 0.75, 2, 1.2797265625">
+      <DataClassMoniker Name="/ShareManDBDataContext/Software" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5608a0cd-7cc0-4a5f-8f08-ee778a82b7e9" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dffe0cce-5794-4661-a243-d6dfd484686f" absoluteBounds="3, 3.75, 2, 1.111106770833334">
+      <DataClassMoniker Name="/ShareManDBDataContext/Cartoon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4da1037-0c24-4081-b407-f8fce5e7f01b" absoluteBounds="3.015, 4.21, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58f7c2b7-46a0-4d3c-b68c-7e388066f7c6" absoluteBounds="3.75, 5.75, 2, 1.2797265625000005">
+      <DataClassMoniker Name="/ShareManDBDataContext/Distribute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45f70643-451b-48e4-bb79-d88017929bac" absoluteBounds="3.765, 6.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8346fa30-0150-4559-b48e-7af9c8642db7" absoluteBounds="6.75, 0.75, 2, 0.94248697916666657">
+      <DataClassMoniker Name="/ShareManDBDataContext/FileItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f2149b7-5bc0-4d59-9c35-76a8b1df5e7a" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.38248697916666669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="937eee44-707f-4654-9f01-37dac330275c" absoluteBounds="6.75, 2.75, 2, 1.2797265625000005">
+      <DataClassMoniker Name="/ShareManDBDataContext/FileSetLink" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52b5cd11-029a-4286-b45d-f8a45e41f1e4" absoluteBounds="6.765, 3.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00dada82-adfd-4f1f-9abe-f549a8dec844" absoluteBounds="6.75, 5.75, 2, 1.2797265625000005">
+      <DataClassMoniker Name="/ShareManDBDataContext/ItemLink" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3079a0c8-ce18-4f6a-a22a-aa1b26b4b803" absoluteBounds="6.765, 6.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9cf8f6f-b572-4efd-b351-effc04817e23" absoluteBounds="3.75, 8.75, 2, 1.2797265624999987">
+      <DataClassMoniker Name="/ShareManDBDataContext/Movie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da9d5b81-fbc3-4d93-95d2-aaf6da274d42" absoluteBounds="3.765, 9.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ecc2318c-5a52-4d72-be49-caac115d3a51" absoluteBounds="3.375, 10.375, 2, 1.2797265624999987">
+      <DataClassMoniker Name="/ShareManDBDataContext/Music" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4afb5b0-3eb4-44de-bf5d-f4fdc921b875" absoluteBounds="3.3899999999999997, 10.835, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b5d403ba-67f8-426c-a6b6-a130bce531e0" absoluteBounds="3.375, 7.125, 2, 1.2797265625000003">
+      <DataClassMoniker Name="/ShareManDBDataContext/PublishType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b00c0aec-b5f7-4af6-8d5f-fc57ba450415" absoluteBounds="3.3900000000000006, 7.585, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f7a245a7-0f65-4368-a77c-b442b3afaa32" absoluteBounds="2.625, 2.5, 2, 0.94248697916666679">
+      <DataClassMoniker Name="/ShareManDBDataContext/InterServer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7301d92-d9e5-47d1-ada5-ee78cc02e7b0" absoluteBounds="2.64, 2.96, 1.9700000000000002, 0.38248697916666669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b3950ecb-7f60-408a-b32b-858143227e21" absoluteBounds="0.5, 3.5, 2, 3.6404036458333326">
+      <DataClassMoniker Name="/ShareManDBDataContext/BaseItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d849b7b-d639-4db1-8e06-f56955e77e68" absoluteBounds="0.51500000000000012, 3.96, 1.9700000000000002, 3.080403645833333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c36ab35d-f419-48d6-bf1c-8eaef5561726" absoluteBounds="1, 8.875, 2, 1.7855859375">
+      <DataClassMoniker Name="/ShareManDBDataContext/T_SubSection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="309718f7-034c-4e65-b08e-32dc0f156f9d" absoluteBounds="1.0149999999999997, 9.335, 1.9700000000000002, 1.2255859375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af19d721-a62a-41e4-869d-f60ca0ed3ea5" absoluteBounds="8.125, 8.375, 2, 3.3031640625">
+      <DataClassMoniker Name="/ShareManDBDataContext/Progress" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd757ce2-52ed-4dc0-9ed9-9cd40e1f904c" absoluteBounds="8.14, 8.835, 1.9700000000000002, 2.7431640625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a3fde0d-f1b7-4be3-a1cd-b5eea60e81f0" absoluteBounds="5.125, 4.375, 2, 1.1111067708333333">
+      <DataClassMoniker Name="/ShareManDBDataContext/VidioNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c401f1e4-a15f-45da-8bf5-85bab2efceff" absoluteBounds="5.14, 4.835, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

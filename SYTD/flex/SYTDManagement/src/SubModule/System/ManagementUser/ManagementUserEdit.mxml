@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="614" height="468" showCloseButton="true">
+	<mx:Script source="ManagementUserEdit_Script.as"/>
+	<mx:Label x="10" y="10" text="用户名："/>
+	<mx:TextInput x="71" y="9" id="tbox_userName" maxChars="25" width="175"/>
+	<mx:Label x="10" y="37" text="登录密码："/>
+	<mx:Label x="10" y="63" text="真实姓名："/>
+	<mx:TextInput x="71" y="36" id="tbox_password" maxChars="25" width="175"/>
+	<mx:TextInput x="71" y="62" id="tbox_trueName" maxChars="25" width="175"/>
+	<mx:Label x="10" y="96" text="归属站点："/>
+	<mx:Label x="10" y="171" text="备注："/>
+	<mx:RadioButtonGroup id="radiogroup1"/>
+	<mx:Button x="198" y="386" label="保存" id="btnSave"/>
+	<mx:Label x="254" y="11" text="*" color="#FC0F03"/>
+	<mx:Label x="254" y="38" text="*" color="#FC0F03" id="lb_passwordWarring"/>
+	<mx:Label x="254" y="64" text="*" color="#FC0F03"/>
+	<mx:TextInput x="69" y="169" height="147" width="177" id="tbox_remark" maxChars="128"/>
+	<mx:ComboBox x="71" y="93" width="175" id="cbox_subList"></mx:ComboBox>
+	<mx:Text x="10" y="122" text="注意：归属站点主要用于文件传输，管理内容范围在权限中标识" color="#FD1706" height="39" width="263"/>
+	<mx:HBox styleName="Title1" width="303" height="22" verticalAlign="middle" x="281" y="10">
+		<mx:Label text="用户权限"/>
+	</mx:HBox>
+	<mx:Tree x="281" y="32" width="303" height="386" horizontalScrollPolicy="on" verticalScrollPolicy="on" showRoot="false" 
+		id="tree_limit" dataProvider="{_limitSource}" labelField="@text" itemRenderer="Custom.Renderer.CheckBoxTreeRenderer"></mx:Tree>
+	<mx:Button x="110" y="334" label="选择一个已存在的用户" id="btnUserSelect"/>
+</mx:TitleWindow>

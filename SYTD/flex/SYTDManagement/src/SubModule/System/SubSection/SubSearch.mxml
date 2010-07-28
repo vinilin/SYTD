@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="302" height="154" showCloseButton="true" title="站点查询">
+	<mx:Script source="SubSearch_Script.as"/>
+	<mx:Label x="21" y="21" text="站点代码："/>
+	<mx:Label x="21" y="51" text="站点名称："/>
+	<mx:TextInput x="80" y="20" id="tbox_subCode" maxChars="20" restrict="0-9"/>
+	<mx:TextInput x="80" y="50" id="tbox_subName" maxChars="50"/>
+	<mx:Button x="172" y="80" label="查询" width="68" id="btnSearch"/>
+	<mx:Label x="248" y="22" text="数字" color="#FE0202"/>
+	
+</mx:TitleWindow>

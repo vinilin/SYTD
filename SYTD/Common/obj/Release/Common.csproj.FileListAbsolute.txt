@@ -1,0 +1,10 @@
+F:\SYTD\Common\bin\Release\Common.dll
+F:\SYTD\Common\bin\Release\Common.pdb
+F:\SYTD\Common\obj\Release\ResolveAssemblyReference.cache
+F:\SYTD\Common\obj\Release\Common.dll
+F:\SYTD\Common\obj\Release\Common.pdb
+D:\work\SYTD\Common\bin\Release\Common.dll
+D:\work\SYTD\Common\bin\Release\Common.pdb
+D:\work\SYTD\Common\obj\Release\ResolveAssemblyReference.cache
+D:\work\SYTD\Common\obj\Release\Common.dll
+D:\work\SYTD\Common\obj\Release\Common.pdb

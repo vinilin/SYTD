@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.375" name="ShareBrowseDB">
+  <DataContextMoniker Name="/ShareBrowseDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dbd4e3d5-9d50-4dbf-b61a-872996040ab5" absoluteBounds="3.5, 4.75, 2, 2.1228255208333326">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/BaseItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7a89756-80bd-47f0-9c2b-c9f19c194846" absoluteBounds="3.515, 5.21, 1.9700000000000002, 1.5628255208333335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62fa79bf-3e64-4225-806f-c2b3d057c8ae" absoluteBounds="6.25, 5, 2, 1.1111067708333327">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Software" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26ca98b1-76fe-49c5-9490-f548d09f869c" absoluteBounds="6.265, 5.46, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4396026-b0a3-48c1-8548-33346736dbf9" absoluteBounds="6.25, 1.25, 2, 0.94248697916666657">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Cartoon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e829af8-bdb0-42fe-9a34-0c0907843bea" absoluteBounds="6.265, 1.71, 1.9700000000000002, 0.38248697916666663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b0619c8-7d8f-4c8a-bf8d-ed38a5c1b595" absoluteBounds="6.25, 3.125, 2, 1.1111067708333335">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/FileItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e0eccd0-449b-498e-a730-497929d69ac6" absoluteBounds="6.265, 3.585, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18de2624-143f-4baf-ad68-40ff1d3ae81d" absoluteBounds="6.25, 7, 2, 1.1111067708333327">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Movie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="067c2119-e58b-4028-baf3-5f579c6865b6" absoluteBounds="6.265, 7.46, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa4c0ee7-49bb-47cb-8751-7a6d36f7f8dc" absoluteBounds="6.25, 9, 2, 1.1111067708333344">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/Music" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e016ff75-d9c3-4a13-898f-17557b293683" absoluteBounds="6.265, 9.46, 1.9700000000000002, 0.55110677083333326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d3421581-c661-439d-b137-5379c5aac67d" absoluteBounds="0.75, 5.125, 2, 1.2797265625000005">
+      <DataClassMoniker Name="/ShareBrowseDBDataContext/PublishType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f709880-4e6e-4513-99f4-a37af8970495" absoluteBounds="0.765, 5.585, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

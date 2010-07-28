@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ShareMan.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ShareMan_FSM_FileSetMan" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/FSM/FileSetMan.asmx</Value>
+    </Setting>
+    <Setting Name="ShareMan_QS_Queries" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/qs/QueryService.asmx</Value>
+    </Setting>
+    <Setting Name="ShareMan_SB_ShareBrowse" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SB/ShareBrowse.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

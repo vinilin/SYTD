@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="466" height="246" creationComplete="init()" title="首页图片维护" showCloseButton="true">
+	<mx:Script source="DefaultPic_Script.as"/>
+
+	<mx:Label x="202" y="31" text="上传视频："/>
+	<mx:TextInput id="tbox_file" x="202" y="59"/>
+	<mx:Button x="361" y="59" label="选择文件" id="btnSelectFile"/>
+	<mx:Button x="350" y="105" label="上传" width="86" id="btnUpload"/>
+	<mx:Button x="228" y="105" label="返回" width="86" id="btnBack"/>
+</mx:TitleWindow>

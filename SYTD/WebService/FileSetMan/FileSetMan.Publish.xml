@@ -1,0 +1,14 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/FSM/">
+    <file relUrl="FileSetMan.asmx" publishTime="11/12/2009 21:24:51" />
+    <file relUrl="bin/FileSetMan.dll" publishTime="11/17/2009 23:12:32" />
+    <file relUrl="bin/FileSetMan.pdb" publishTime="11/17/2009 23:12:32" />
+    <file relUrl="Web.config" publishTime="11/12/2009 22:44:29" />
+  </publishTarget>
+  <publishTarget publishUrl="http://localhost/">
+    <file relUrl="FileSetMan.asmx" publishTime="11/12/2009 21:24:51" />
+    <file relUrl="bin/FileSetMan.dll" publishTime="11/17/2009 22:05:56" />
+    <file relUrl="bin/FileSetMan.pdb" publishTime="11/17/2009 22:05:56" />
+    <file relUrl="Web.config" publishTime="11/12/2009 22:44:29" />
+  </publishTarget>
+</publishData>

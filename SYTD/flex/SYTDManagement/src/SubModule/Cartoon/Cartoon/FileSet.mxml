@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" title="文件列表"
+	 width="414" height="366" showCloseButton="true" xmlns:checkboxClumns="Custom.Renderer.*"
+	 creationComplete="init()">
+	<mx:Script source="FileSet_Script.as"/>
+	<mx:HBox id="ToolBar" styleName="ToolBar" horizontalScrollPolicy="off" verticalScrollPolicy="off"  width="100%" paddingLeft="10" horizontalAlign="left" horizontalGap="10" height="28" y="1">
+		<mx:Button id="btnDelete" label="删除" styleName="ToolBarInBtn" fontSize="12"/>		
+	</mx:HBox>
+	<mx:DataGrid id="dg"  width="100%" height="259" dataProvider="{_files}" doubleClickEnabled="true"
+				 horizontalScrollPolicy="on" verticalScrollPolicy="on" editable="false" sortableColumns="true" allowMultipleSelection="true" y="31">
+				 	<mx:columns>
+					<mx:DataGridColumn width="30" sortable="false" dataField="ISCHECKED" headerRenderer="{hr}" itemRenderer="Custom.Renderer.CenteredCheckBoxItemRenderer" /><!---->
+					<mx:DataGridColumn headerText="文件名" dataField="FILENAME"/>
+				</mx:columns>
+			</mx:DataGrid>
+	<mx:Label x="10" y="298" text="文件名："/>
+	<mx:TextInput id="tbox_fileName" x="54" y="296" width="266"/>
+	<mx:Button id="btnSave" x="328" y="296" label="确定"/>
+	
+</mx:TitleWindow>

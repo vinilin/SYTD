@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="318" height="228" showCloseButton="true">
+	<mx:Script source="SubEdit_Script.as"/>
+	<mx:Label x="10" y="10" text="站点编号："/>
+	<mx:TextInput x="71" y="9" id="tbox_subCode" restrict="0-9" maxChars="10" width="175"/>
+	<mx:Label x="10" y="37" text="站点名称："/>
+	<mx:TextInput x="71" y="36" id="tbox_subName" maxChars="25" width="175"/>
+	<mx:TextInput x="71" y="65" id="tbox_serverIp" maxChars="16" width="175"/>
+	<mx:Label x="10" y="69" text="服务器IP："/>
+	<mx:Label x="10" y="104" text="是否是主站的："/>
+	<mx:RadioButtonGroup id="radiogroup1"/>
+	<mx:RadioButton x="93" y="102" label="是" groupName="radiogroup1" id="rdo_isCenter_yes"/>
+	<mx:RadioButton x="158" y="102" label="否" groupName="radiogroup1" selected="true" id="rdo_isCenter_no"/>
+	<mx:Button x="219" y="141" label="保存" id="btnSave"/>
+	<mx:Label x="254" y="11" text="数字*" color="#FC0F03"/>
+	<mx:Label x="254" y="38" text="*" color="#FC0F03"/>
+	<mx:Label x="254" y="67" text="*" color="#FC0F03"/>
+</mx:TitleWindow>

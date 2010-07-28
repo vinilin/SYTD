@@ -1,0 +1,14 @@
+<publishData>
+  <publishTarget publishUrl="D:\release\QS\">
+    <file relUrl="bin/QueryService.dll" publishTime="02/18/2010 13:50:02" />
+    <file relUrl="bin/QueryService.pdb" publishTime="02/18/2010 13:50:02" />
+    <file relUrl="QueryService.asmx" publishTime="02/04/2010 20:57:04" />
+    <file relUrl="Web.config" publishTime="02/04/2010 20:57:04" />
+  </publishTarget>
+  <publishTarget publishUrl="http://localhost/QS/">
+    <file relUrl="bin/QueryService.dll" publishTime="11/19/2009 00:39:54" />
+    <file relUrl="bin/QueryService.pdb" publishTime="11/19/2009 00:39:54" />
+    <file relUrl="QueryService.asmx" publishTime="11/15/2009 20:50:06" />
+    <file relUrl="Web.config" publishTime="11/15/2009 20:56:04" />
+  </publishTarget>
+</publishData>

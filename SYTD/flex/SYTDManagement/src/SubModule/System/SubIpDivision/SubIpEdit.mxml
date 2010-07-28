@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" layout="absolute" width="318" height="184" showCloseButton="true">
+	<mx:Script source="SubIpEdit_Script.as"/>
+	<mx:Label x="10" y="10" text="站点："/>
+	<mx:Label x="10" y="37" text="开始IP："/>
+	<mx:Label x="10" y="65" text="结束IP："/>
+	<mx:Label x="270" y="11" text="*" color="#FC0F03"/>
+	<mx:Label x="270" y="39" text="*" color="#FC0F03"/>
+	<mx:Label x="270" y="67" text="*" color="#FC0F03"/>
+	<mx:ComboBox x="63" y="7" width="204" id="cbox_sub"></mx:ComboBox>
+	<mx:TextInput x="63" y="36" width="204" id="tbox_startIp" restrict="0-9." maxChars="15"/>
+	<mx:TextInput x="63" y="64" width="204" id="tbox_endIp" restrict="0-9." maxChars="15"/>
+	<mx:Button x="219" y="111" label="保存" id="btnSave"/>
+</mx:TitleWindow>

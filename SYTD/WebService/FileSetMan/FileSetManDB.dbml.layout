@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FileSetManDB">
+  <DataContextMoniker Name="/FileSetManDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d8cee867-b038-4e2b-8cb3-073672e71cb7" absoluteBounds="4.25, 0.875, 2, 1.6169661458333331">
+      <DataClassMoniker Name="/FileSetManDBDataContext/File" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1659492c-c321-4fac-9d94-b0fddc2546f9" absoluteBounds="4.265, 1.335, 1.9700000000000002, 1.0569661458333333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0a58350-1fcc-434f-ba2b-a638b4dd63ec" absoluteBounds="1, 1, 2, 1.2797265625">
+      <DataClassMoniker Name="/FileSetManDBDataContext/FileSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="394acc31-b1d2-470f-90a0-202af8a3dec8" absoluteBounds="1.0150000000000001, 1.46, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 1.63986328125); (4.25 : 1.63986328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FileSetManDBDataContext/FileSet/FileSet_File" />
+      <nodes>
+        <classShapeMoniker Id="b0a58350-1fcc-434f-ba2b-a638b4dd63ec" />
+        <classShapeMoniker Id="d8cee867-b038-4e2b-8cb3-073672e71cb7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

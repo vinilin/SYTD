@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" 
+	width="278" height="250" showCloseButton="true" close="OnClose()"
+    horizontalScrollPolicy="off" verticalScrollPolicy="off" >
+	<mx:Script source="MovieAudit_Script.as" >
+	</mx:Script>
+	<mx:Model id="audit_mdl">
+		<result>	
+			<res lable="不通过" data = "-1"/>
+			<res lable="通过" data = "1"/>
+		</result>
+	</mx:Model>
+	<mx:Label x="10" y="12" text="审核："/>
+	<mx:ComboBox id ="combAudit"  
+		labelField="lable" dataProvider= "{audit_mdl.res}" 
+		prompt="请选择"  x="53" y="10" width="195" change="OnChanged()"/>
+
+	<mx:Button id="btnOk" x="144" y="142" label="确定" click="OnOK()"/>
+	<mx:Button id="btnCancel" x="200" y="142" label="取消" click="OnCancel()"/>
+	<mx:TextArea x="10" y="66" width="238" height="68" enabled="false" id="resonText"/>
+	<mx:Label x="10" y="40" text="拒绝原因："/>
+	<mx:Button id="btnPlay" x="10" y="142" label="观看" click="OnPlay()"/>
+</mx:TitleWindow>

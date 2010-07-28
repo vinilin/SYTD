@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns2="http://localhost/FSM/FileSetManSoap"
+ xmlns:ns1="http://localhost/FSM"
+ xmlns:ns3="http://localhost/FSM/FileSetManSoap12">
+ <SOAP-ENV:Body>
+   <ns1:CreateFileSet>
+    <ns1:fset>
+     <ns1:ID>0</ns1:ID>
+     <ns1:Path></ns1:Path>
+     <ns1:Ready>false</ns1:Ready>
+     <ns1:File>
+      <ns1:File>
+       <ns1:ID>0</ns1:ID>
+       <ns1:FileSetID>0</ns1:FileSetID>
+       <ns1:FileName></ns1:FileName>
+       <ns1:Size>0</ns1:Size>
+       <ns1:ShowIndex>0</ns1:ShowIndex>
+      </ns1:File>
+     </ns1:File>
+    </ns1:fset>
+   </ns1:CreateFileSet>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

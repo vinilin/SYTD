@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PublishMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="mvInfo" type="tns:Movie" />
+            <s:element minOccurs="1" maxOccurs="1" name="fsId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BaseItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Owner" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birth" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PublishType" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Brief" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Movie">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Player" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Director" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishCartoon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Cartoon" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cartoon">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishCartoonResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishSoft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="tns:Software" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Software">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Manufacturer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishSoftResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishMusic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="m" type="tns:Music" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Music">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Singer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishMusicResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PublishMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishMovie" />
+  </wsdl:message>
+  <wsdl:message name="PublishMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishCartoonSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishCartoon" />
+  </wsdl:message>
+  <wsdl:message name="PublishCartoonSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishCartoonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoftSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishSoft" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoftSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishSoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishMusicSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishMusic" />
+  </wsdl:message>
+  <wsdl:message name="PublishMusicSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishMusicResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ShareBrowseSoap">
+    <wsdl:operation name="PublishMovie">
+      <wsdl:input message="tns:PublishMovieSoapIn" />
+      <wsdl:output message="tns:PublishMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <wsdl:input message="tns:PublishCartoonSoapIn" />
+      <wsdl:output message="tns:PublishCartoonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <wsdl:input message="tns:PublishSoftSoapIn" />
+      <wsdl:output message="tns:PublishSoftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <wsdl:input message="tns:PublishMusicSoapIn" />
+      <wsdl:output message="tns:PublishMusicSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShareBrowseSoap" type="tns:ShareBrowseSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PublishMovie">
+      <soap:operation soapAction="http://tempuri.org/PublishMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <soap:operation soapAction="http://tempuri.org/PublishCartoon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <soap:operation soapAction="http://tempuri.org/PublishSoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <soap:operation soapAction="http://tempuri.org/PublishMusic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ShareBrowseSoap12" type="tns:ShareBrowseSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PublishMovie">
+      <soap12:operation soapAction="http://tempuri.org/PublishMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <soap12:operation soapAction="http://tempuri.org/PublishCartoon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <soap12:operation soapAction="http://tempuri.org/PublishSoft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <soap12:operation soapAction="http://tempuri.org/PublishMusic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShareBrowse">
+    <wsdl:port name="ShareBrowseSoap" binding="tns:ShareBrowseSoap">
+      <soap:address location="http://localhost:4078/ShareBrowse.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ShareBrowseSoap12" binding="tns:ShareBrowseSoap12">
+      <soap12:address location="http://localhost:4078/ShareBrowse.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

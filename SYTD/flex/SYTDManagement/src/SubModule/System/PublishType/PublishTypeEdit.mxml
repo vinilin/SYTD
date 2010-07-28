@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="296" height="150" 
+   creationComplete="init()" showCloseButton="true" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+    <mx:Script source="PublishTypeEdit_Script.as"/>
+	<mx:Label x="10" y="17" text="类别名称："/>
+	<mx:TextInput x="73" y="15" width="174" id="tbox_text" maxChars="25"/>
+	<mx:Label x="255" y="17" text="*" color="#FF1D05"/>
+	<mx:Button x="199" y="60" label="保存" id="btnSave"/>
+</mx:TitleWindow>

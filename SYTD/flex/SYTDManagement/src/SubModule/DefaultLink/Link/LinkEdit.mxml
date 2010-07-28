@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="324" height="150" 
+	showCloseButton="true" xmlns:System="Custom.System.*" creationComplete="init()"
+    verticalScrollPolicy="off" horizontalScrollPolicy="off">
+	<mx:Script source="LinkEdit_Script.as"/>
+	<mx:Label x="10" y="35" text="链接地址："/>
+	<mx:Label x="10" y="9" text="链接名称："/>
+	<mx:TextInput x="67" y="7" width="210" id="tbox_linkName" maxChars="25"/>
+	<mx:Label x="277" y="9" text="*" color="#FE0A04"/>
+	<mx:TextInput x="67" y="33" width="210" id="tbox_linkUrl" maxChars="128"/>
+	<mx:Label x="277" y="35" text="*" color="#FE0A04"/>
+	<mx:Button id="btnDefaultPic" x="129" y="74" label="首页图片"/>
+	<mx:Button id="btnSave" x="225" y="74" label="保存"/>
+</mx:TitleWindow>

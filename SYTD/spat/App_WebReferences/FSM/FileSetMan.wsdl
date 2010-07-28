@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/FSM" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://localhost/FSM" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/FSM">
+      <s:element name="CreateFileSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fset" type="tns:FileSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FileSet">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ready" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="File" type="tns:ArrayOfFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="tns:File" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="File">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="FileSetID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowIndex" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFileSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateFileSetResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QureyFileSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QureyFileSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QureyFileSetResult" type="tns:FileSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileSetResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CommitFileSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitFileSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitFileSetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fsid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="fid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CommitError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitErrorResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateFileSetSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFileSet" />
+  </wsdl:message>
+  <wsdl:message name="CreateFileSetSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFileSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QureyFileSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QureyFileSet" />
+  </wsdl:message>
+  <wsdl:message name="QureyFileSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QureyFileSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSetSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFileSet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSetSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFileSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitFileSetSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitFileSet" />
+  </wsdl:message>
+  <wsdl:message name="CommitFileSetSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitFileSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitFileSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitFile" />
+  </wsdl:message>
+  <wsdl:message name="CommitFileSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitError" />
+  </wsdl:message>
+  <wsdl:message name="CommitErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitErrorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FileSetManSoap">
+    <wsdl:operation name="CreateFileSet">
+      <wsdl:input message="tns:CreateFileSetSoapIn" />
+      <wsdl:output message="tns:CreateFileSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QureyFileSet">
+      <wsdl:input message="tns:QureyFileSetSoapIn" />
+      <wsdl:output message="tns:QureyFileSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFileSet">
+      <wsdl:input message="tns:DeleteFileSetSoapIn" />
+      <wsdl:output message="tns:DeleteFileSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitFileSet">
+      <wsdl:input message="tns:CommitFileSetSoapIn" />
+      <wsdl:output message="tns:CommitFileSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitFile">
+      <wsdl:input message="tns:CommitFileSoapIn" />
+      <wsdl:output message="tns:CommitFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitError">
+      <wsdl:input message="tns:CommitErrorSoapIn" />
+      <wsdl:output message="tns:CommitErrorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileSetManSoap" type="tns:FileSetManSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateFileSet">
+      <soap:operation soapAction="http://localhost/FSM/CreateFileSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QureyFileSet">
+      <soap:operation soapAction="http://localhost/FSM/QureyFileSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFileSet">
+      <soap:operation soapAction="http://localhost/FSM/DeleteFileSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitFileSet">
+      <soap:operation soapAction="http://localhost/FSM/CommitFileSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitFile">
+      <soap:operation soapAction="http://localhost/FSM/CommitFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitError">
+      <soap:operation soapAction="http://localhost/FSM/CommitError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FileSetManSoap12" type="tns:FileSetManSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateFileSet">
+      <soap12:operation soapAction="http://localhost/FSM/CreateFileSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QureyFileSet">
+      <soap12:operation soapAction="http://localhost/FSM/QureyFileSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFileSet">
+      <soap12:operation soapAction="http://localhost/FSM/DeleteFileSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitFileSet">
+      <soap12:operation soapAction="http://localhost/FSM/CommitFileSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitFile">
+      <soap12:operation soapAction="http://localhost/FSM/CommitFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitError">
+      <soap12:operation soapAction="http://localhost/FSM/CommitError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileSetMan">
+    <wsdl:port name="FileSetManSoap" binding="tns:FileSetManSoap">
+      <soap:address location="http://localhost/FSM/FileSetMan.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FileSetManSoap12" binding="tns:FileSetManSoap12">
+      <soap12:address location="http://localhost/FSM/FileSetMan.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

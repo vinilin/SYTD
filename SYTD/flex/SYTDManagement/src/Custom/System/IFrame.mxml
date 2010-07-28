@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+    resize="callLater(moveIFrame)"
+    move="callLater(moveIFrame)">
+
+    <mx:Script>
+    <![CDATA[
+
+        import flash.external.ExternalInterface;
+        import flash.geom.Point;
+        import flash.net.navigateToURL;
+
+        private var __source: String;
+        private var __type:String;
+		private var __value:String;
+        /**
+         * Move iframe through ExternalInterface.  The location is determined using localToGlobal()
+         * on a Point in the Canvas.
+         **/
+        public function moveIFrame(): void
+        {
+
+            var localPt:Point = new Point(0, 0);
+            var globalPt:Point = this.localToGlobal(localPt);
+
+            ExternalInterface.call("moveIFrame", globalPt.x, globalPt.y, this.width, this.height);
+        }
+
+        /**
+         * The source URL for the IFrame.  When set, the URL is loaded through ExternalInterface.
+         **/
+        public function set type(val:String):void
+        {
+        	this.__type = val;
+        	/*if (this.__source != null && this.__type != null)
+        	{
+        		 if (! ExternalInterface.available)
+                {
+                    throw new Error("ExternalInterface is not available in this container. Internet Explorer ActiveX, Firefox, Mozilla 1.7.5 and greater, or other browsers that support NPRuntime are required.");
+                }
+                ExternalInterface.call("loadIFrame", this.__source,this.__type);
+                moveIFrame();
+        	}
+        	*/
+        } 
+        public function set source(val: String):void
+        {
+        	this.__source = val;
+            if (this.__type != null && this.__source != null)
+            {
+
+                if (! ExternalInterface.available)
+                {
+                    throw new Error("ExternalInterface is not available in this container. Internet Explorer ActiveX, Firefox, Mozilla 1.7.5 and greater, or other browsers that support NPRuntime are required.");
+                }
+                ExternalInterface.call("loadIFrame", this.__source,this.__type);
+                moveIFrame();
+            }
+        }
+
+        public function get source(): String
+        {
+            return __source;
+        }
+		
+		public function set value(val:String):void
+		{
+			this.__value=val;
+			ExternalInterface.call("SetEditValue",val);
+			/* var params:Array=new Array;
+			params.push(val);
+			callLater(setValue,params); */
+		}
+		/* private function setValue(val:String):void
+		{
+			ExternalInterface.call("SetEditValue",val);
+		} */
+		public function get value():String
+		{
+			this.__value=ExternalInterface.call("GetEditValue");
+			return this.__value;
+		}
+        /**
+         * Whether the IFrame is visible.  
+         **/
+        /* override public function set visible(visible: Boolean): void
+        {
+            super.visible=visible;
+
+            if (visible)
+            {
+                ExternalInterface.call("showIFrame");
+            }
+            else 
+            {
+                ExternalInterface.call("hideIFrame");
+            }
+        } */
+        public function GetShowState():Boolean
+        {
+        	return ExternalInterface.call("GetShowState");
+        }
+        public function show():void
+        {
+        	ExternalInterface.call("showIFrame");
+        }
+        public function hidden():void
+        {
+        	ExternalInterface.call("hideIFrame");
+        }
+        public function remove():void
+        {
+        	ExternalInterface.call("removeIFrame");
+        }
+
+    ]]>
+    </mx:Script>
+
+</mx:Canvas>

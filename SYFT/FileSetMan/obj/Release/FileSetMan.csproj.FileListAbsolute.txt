@@ -1,0 +1,5 @@
+D:\work\SYFT\FileSetMan\bin\FileSetMan.dll
+D:\work\SYFT\FileSetMan\bin\FileSetMan.pdb
+D:\work\SYFT\FileSetMan\obj\Release\ResolveAssemblyReference.cache
+D:\work\SYFT\FileSetMan\obj\Release\FileSetMan.dll
+D:\work\SYFT\FileSetMan\obj\Release\FileSetMan.pdb

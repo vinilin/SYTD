@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="358" height="194" 
+   creationComplete="init()" showCloseButton="true" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+    <mx:Script source="KindEdit_Script.as"/>
+	<mx:Label x="10" y="17" text="类别名称："/>
+	<mx:Label x="10" y="43" text="是否链接：" id="lb_linkFlag"/>
+	<mx:Label x="10" y="69" text="是否链接：" id="lb_linkUrl"/>
+	<mx:TextInput x="73" y="15" width="174" id="tbox_text" maxChars="25"/>
+	<mx:Label x="255" y="17" text="*" color="#FF1D05"/>
+	<mx:Button x="280" y="112" label="保存" id="btnSave"/>
+	<mx:Button x="190" y="113" label="首页图标" id="btnDefaultPic"/>
+	<mx:CheckBox x="73" y="41" label="链接外部地址" id="cbox_linkOrKind" height="25"/>
+	<mx:TextInput x="73" y="67" width="255" id="tbox_linkUrl" maxChars="128"/>
+</mx:TitleWindow>

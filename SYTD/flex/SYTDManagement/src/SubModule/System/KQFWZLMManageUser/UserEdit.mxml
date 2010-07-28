@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" 
+	layout="absolute" width="550" height="418" showCloseButton="true"
+	xmlns:checkboxClumns="Custom.Renderer.*" >
+	<mx:Script source="UserEdit_Script.as"/>
+	<mx:Label x="10" y="10" text="用户名："/>
+	<mx:TextInput x="71" y="9" id="tbox_userName" maxChars="25" width="175"/>
+	<mx:Label x="10" y="37" text="登录密码："/>
+	<mx:Label x="10" y="63" text="确认密码："/>
+	<mx:Label x="10" y="89" text="真实姓名："/>
+	<mx:TextInput x="71" y="36" id="tbox_password" maxChars="25" width="175" displayAsPassword="true"/>
+	<mx:TextInput x="71" y="61" id="tbox_password1" maxChars="25" width="175" displayAsPassword="true"/>
+	<mx:TextInput x="71" y="88" id="tbox_trueName" maxChars="25" width="175"/>
+	<mx:Label x="10" y="122" text="归属站点："/>
+	<mx:Label x="10" y="239" text="备注："/>
+	<mx:RadioButtonGroup id="radiogroup1"/>
+	<mx:Button x="472" y="346" label="保存" id="btnSave"/>
+	<mx:Label x="254" y="11" text="*" color="#FC0F03"/>
+	<mx:Label x="254" y="38" text="*" color="#FC0F03" id="lb_passwordWarring"/>
+	<mx:Label x="254" y="63" text="*" color="#FC0F03" id="lb_passwordWarring1"/>
+	<mx:Label x="254" y="90" text="*" color="#FC0F03"/>
+	<mx:TextInput x="69" y="237" height="101" width="177" id="tbox_remark" maxChars="128"/>
+	<mx:ComboBox x="71" y="119" width="175" id="cbox_subList"></mx:ComboBox>
+	<mx:Text x="10" y="148" text="注意：归属站点就是管理员能管理的站点" color="#FD1706" height="39" width="263"/>
+	<mx:Label x="10" y="183" text="是否绑定IP："/>
+	<mx:Label x="10" y="209" text="绑定的IP："/>
+	<mx:TextInput x="71" y="207" width="175" id="tbox_bindIp"/>
+	<mx:RadioButtonGroup id="radiogroup2"/>
+	<mx:RadioButton x="85" y="181" label="是" groupName="radiogroup2" id="rdo_bindip_yes"/>
+	<mx:RadioButton x="151" y="183" label="否" groupName="radiogroup2" selected="true" id="rdo_bindip_no"/>
+	<mx:HBox id="ToolBar" styleName="ToolBar" horizontalScrollPolicy="off" verticalScrollPolicy="off" verticalAlign="middle" width="250" paddingLeft="10" horizontalAlign="left" horizontalGap="10" height="28" y="3" x="270">
+		<mx:Label text="子栏目" />
+	</mx:HBox>
+	<mx:DataGrid id="dg"  width="250" height="305" dataProvider="{_kindSource}" doubleClickEnabled="true"
+				 horizontalScrollPolicy="on" verticalScrollPolicy="on" editable="false" allowMultipleSelection="true"
+				  x="270" y="31">
+		<mx:columns>
+			<mx:DataGridColumn width="30" sortable="false" dataField="ISCHECKED" headerRenderer="{hr}" itemRenderer="Custom.Renderer.CenteredCheckBoxItemRenderer" /><!---->
+			<mx:DataGridColumn headerText="子栏目名称" dataField="KINDNAME" width="100"/>
+		</mx:columns>			
+	</mx:DataGrid>
+</mx:TitleWindow>

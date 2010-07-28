@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <schema targetNamespace="http://tempuri.org/ftp.xsd"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ftp="http://tempuri.org/ftp.xsd"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <simpleType name="Status">
+   <restriction base="xsd:string">
+    <enumeration value="STOP"/><!-- enum const = 1 -->
+    <enumeration value="RUNNING"/><!-- enum const = 2 -->
+    <enumeration value="PAUSE"/><!-- enum const = 3 -->
+   </restriction>
+  </simpleType>
+  <complexType name="File">
+   <sequence>
+     <element name="id" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+     <element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   </sequence>
+  </complexType>
+  <complexType name="Position">
+   <sequence>
+     <element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="ip" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="user" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="pwd" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="port" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+   </sequence>
+  </complexType>
+  <complexType name="ArrayOfFile">
+   <sequence>
+     <element name="id" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+     <element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+     <element name="item" type="ftp:File" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+   </sequence>
+  </complexType>
+  <!-- operation request element -->
+  <element name="Transform">
+   <complexType>
+    <sequence>
+     <element name="flist" type="ftp:ArrayOfFile" minOccurs="0" maxOccurs="1" nillable="true"/>
+     <element name="position" type="ftp:Position" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="TransformResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Stop">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="StopResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Start">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="StartResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Pause">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="PauseResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Resume">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="ResumeResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="Delete">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="DeleteResponse">
+   <complexType>
+    <sequence>
+     <element name="response" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="GetState">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="State">
+   <complexType>
+    <sequence>
+     <element name="total" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="downloaded" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="fsize" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="fdownloaded" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+     <element name="status" type="ftp:Status" minOccurs="1" maxOccurs="1"/>
+     <element name="fname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+   </complexType>
+  </element>
+ </schema>
+

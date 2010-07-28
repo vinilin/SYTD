@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SYTD" Class="ShareManDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=SYTD;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SYTDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Audit" Member="Audit">
+    <Type Name="Audit">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AuditOwner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AuditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Software" Member="Software">
+    <Type Name="Software">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Manufacturer" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cartoon" Member="Cartoon">
+    <Type Name="Cartoon">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Distribute" Member="Distribute">
+    <Type Name="Distribute">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubCode" Storage="_AreaID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileItem" Member="FileItem">
+    <Type Name="FileItem">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileSetLink" Member="FileSetLink">
+    <Type Name="FileSetLink">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FileSetID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ItemLink" Member="ItemLink">
+    <Type Name="ItemLink">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SrcLink" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="InterLink" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Movie" Member="Movie">
+    <Type Name="Movie">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Director" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Music" Member="Music">
+    <Type Name="Music">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Singer" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PublishType" Member="PublishType">
+    <Type Name="PublishType">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InterServer" Member="InterServer">
+    <Type Name="InterServer">
+      <Column Name="ip" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BaseItem" Member="BaseItem">
+    <Type Name="BaseItem">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Owner" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SubCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Birth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PublishType" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="IssueDate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Brief" Type="System.String" DbType="VarChar(2048) NOT NULL" CanBeNull="false" />
+      <Column Name="Ext1" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Ext2" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Ext3" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Ext4" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Ext5" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Ext6" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Ext7" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Ext8" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_SubSection" Member="T_SubSection">
+    <Type Name="T_SubSection">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="subName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="serverIp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isCenter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IpArea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Progress" Member="Progress">
+    <Type Name="Progress">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SrcIp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DstIp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileSetID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="AuditMan" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="total" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="downloaded" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CmmitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FinishDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ext1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VidioNews" Member="VidioNews">
+    <Type Name="VidioNews">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Context" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

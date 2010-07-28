@@ -1,0 +1,8 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/">
+    <file relUrl="bin/QueryService.dll" publishTime="11/18/2009 01:58:56" />
+    <file relUrl="bin/QueryService.pdb" publishTime="11/18/2009 01:58:56" />
+    <file relUrl="QueryService.asmx" publishTime="11/15/2009 20:50:05" />
+    <file relUrl="Web.config" publishTime="11/15/2009 20:56:02" />
+  </publishTarget>
+</publishData>

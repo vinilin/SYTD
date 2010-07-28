@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/SB" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://localhost/SB" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/SB">
+      <s:element name="PublishMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="mvInfo" type="tns:Movie" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubType" type="tns:PublishType" />
+            <s:element minOccurs="1" maxOccurs="1" name="fsId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BaseItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Owner" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birth" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PublishType" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Brief" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext4" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BrowseCount" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext8" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Movie">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Player" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Director" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PublishType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishVidioNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="vnInfo" type="tns:VidioNews" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubType" type="tns:PublishType" />
+            <s:element minOccurs="1" maxOccurs="1" name="fsId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VidioNews">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Context" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishVidioNewsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishCartoon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Cartoon" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubType" type="tns:PublishType" />
+            <s:element minOccurs="1" maxOccurs="1" name="fsId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cartoon">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishCartoonResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishSoft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="tns:Software" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubType" type="tns:PublishType" />
+            <s:element minOccurs="1" maxOccurs="1" name="fsId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Software">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manufacturer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishSoftResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PublishMusic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baseInfo" type="tns:BaseItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="m" type="tns:Music" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubType" type="tns:PublishType" />
+            <s:element minOccurs="1" maxOccurs="1" name="fsId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Music">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Singer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PublishMusicResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemovePublish">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePublishResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMoive">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMoiveResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMusic">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMusicResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateSoft">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateSoftResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateCartton">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateCarttonResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PublishMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishMovie" />
+  </wsdl:message>
+  <wsdl:message name="PublishMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishVidioNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishVidioNews" />
+  </wsdl:message>
+  <wsdl:message name="PublishVidioNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishVidioNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishCartoonSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishCartoon" />
+  </wsdl:message>
+  <wsdl:message name="PublishCartoonSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishCartoonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoftSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishSoft" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoftSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishSoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishMusicSoapIn">
+    <wsdl:part name="parameters" element="tns:PublishMusic" />
+  </wsdl:message>
+  <wsdl:message name="PublishMusicSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishMusicResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePublishSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePublish" />
+  </wsdl:message>
+  <wsdl:message name="RemovePublishSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMoiveSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMoive" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMoiveSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMoiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMusicSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMusic" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMusicSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMusicResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoftSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSoft" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoftSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCarttonSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCartton" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCarttonSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCarttonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ShareBrowseSoap">
+    <wsdl:operation name="PublishMovie">
+      <wsdl:input message="tns:PublishMovieSoapIn" />
+      <wsdl:output message="tns:PublishMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishVidioNews">
+      <wsdl:input message="tns:PublishVidioNewsSoapIn" />
+      <wsdl:output message="tns:PublishVidioNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <wsdl:input message="tns:PublishCartoonSoapIn" />
+      <wsdl:output message="tns:PublishCartoonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <wsdl:input message="tns:PublishSoftSoapIn" />
+      <wsdl:output message="tns:PublishSoftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <wsdl:input message="tns:PublishMusicSoapIn" />
+      <wsdl:output message="tns:PublishMusicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePublish">
+      <wsdl:input message="tns:RemovePublishSoapIn" />
+      <wsdl:output message="tns:RemovePublishSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMoive">
+      <wsdl:input message="tns:UpdateMoiveSoapIn" />
+      <wsdl:output message="tns:UpdateMoiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMusic">
+      <wsdl:input message="tns:UpdateMusicSoapIn" />
+      <wsdl:output message="tns:UpdateMusicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoft">
+      <wsdl:input message="tns:UpdateSoftSoapIn" />
+      <wsdl:output message="tns:UpdateSoftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartton">
+      <wsdl:input message="tns:UpdateCarttonSoapIn" />
+      <wsdl:output message="tns:UpdateCarttonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShareBrowseSoap" type="tns:ShareBrowseSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PublishMovie">
+      <soap:operation soapAction="http://localhost/SB/PublishMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishVidioNews">
+      <soap:operation soapAction="http://localhost/SB/PublishVidioNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <soap:operation soapAction="http://localhost/SB/PublishCartoon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <soap:operation soapAction="http://localhost/SB/PublishSoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <soap:operation soapAction="http://localhost/SB/PublishMusic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePublish">
+      <soap:operation soapAction="http://localhost/SB/RemovePublish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMoive">
+      <soap:operation soapAction="http://localhost/SB/UpdateMoive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMusic">
+      <soap:operation soapAction="http://localhost/SB/UpdateMusic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoft">
+      <soap:operation soapAction="http://localhost/SB/UpdateSoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartton">
+      <soap:operation soapAction="http://localhost/SB/UpdateCartton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ShareBrowseSoap12" type="tns:ShareBrowseSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PublishMovie">
+      <soap12:operation soapAction="http://localhost/SB/PublishMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishVidioNews">
+      <soap12:operation soapAction="http://localhost/SB/PublishVidioNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishCartoon">
+      <soap12:operation soapAction="http://localhost/SB/PublishCartoon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishSoft">
+      <soap12:operation soapAction="http://localhost/SB/PublishSoft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishMusic">
+      <soap12:operation soapAction="http://localhost/SB/PublishMusic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePublish">
+      <soap12:operation soapAction="http://localhost/SB/RemovePublish" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMoive">
+      <soap12:operation soapAction="http://localhost/SB/UpdateMoive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMusic">
+      <soap12:operation soapAction="http://localhost/SB/UpdateMusic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoft">
+      <soap12:operation soapAction="http://localhost/SB/UpdateSoft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartton">
+      <soap12:operation soapAction="http://localhost/SB/UpdateCartton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShareBrowse">
+    <wsdl:port name="ShareBrowseSoap" binding="tns:ShareBrowseSoap">
+      <soap:address location="http://localhost/SB/ShareBrowse.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ShareBrowseSoap12" binding="tns:ShareBrowseSoap12">
+      <soap12:address location="http://localhost/SB/ShareBrowse.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

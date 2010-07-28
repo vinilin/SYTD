@@ -1,0 +1,8 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/">
+    <file relUrl="bin/ShareBrowse.pdb" publishTime="11/15/2009 20:51:59" />
+    <file relUrl="bin/ShareBrowse.dll" publishTime="11/15/2009 20:51:59" />
+    <file relUrl="ShareBrowse.asmx" publishTime="11/11/2009 22:55:34" />
+    <file relUrl="Web.config" publishTime="11/11/2009 22:54:22" />
+  </publishTarget>
+</publishData>

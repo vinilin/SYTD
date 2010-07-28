@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="666" height="496" 
+	showCloseButton="true" xmlns:System="Custom.System.*" creationComplete="init()"
+    verticalScrollPolicy="off" horizontalScrollPolicy="off">
+	<mx:Script source="ArticleEdit_Script.as"/>
+	<mx:Label x="10" y="35" text="标题："/>
+	<mx:TextInput id="tbox_title" x="45" y="34" width="576" maxChars="100"/>
+	<mx:Label x="627" y="36" text="*" color="#FE0A04"/>
+	<System:IFrame id="iFrame" width="635" height="350" y="63" x="5"/>
+	<mx:Button id="btnSave" x="585" y="421" label="保存"/>
+	<mx:Label x="10" y="9" text="类别：" visible="false"/>
+	<mx:ComboBox x="46" y="7" width="260" id="cbox_kind" visible="false"></mx:ComboBox>
+	<mx:ComboBox x="361" y="7" width="260" id="cbox_kind2" visible="false"></mx:ComboBox>
+	<mx:Label x="314" y="9" text="子类别：" id="lbKind2" visible="false"/>
+</mx:TitleWindow>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" horizontalScrollPolicy="off" verticalScrollPolicy="off" 
+	xmlns:checkboxClumns="Custom.Renderer.*" xmlns:Pager="Custom.Pager.*">
+	<mx:Script source="MusicList_Script.as"/>
+	<mx:ApplicationControlBar id="controlBar_Title" width="100%">
+		<mx:Label text="◎  音乐欣赏 —— 音乐维护"/>
+	</mx:ApplicationControlBar>
+		<mx:VBox horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%" height="100%" verticalGap="0" paddingLeft="1" paddingBottom="1" paddingRight="1" paddingTop="1">
+			<mx:HBox id="ToolBar" styleName="ToolBar" horizontalScrollPolicy="off" verticalScrollPolicy="off"  width="100%" paddingLeft="10" horizontalAlign="left" horizontalGap="10" height="28">
+				<mx:Button id="btnAdd" label="增加" styleName="ToolBarInBtn" fontSize="12"/>
+				<mx:Button id="btnUpdate" label="修改" styleName="ToolBarInBtn" fontSize="12"/>
+				<mx:Button id="btnDelete" label="删除" styleName="ToolBarInBtn" fontSize="12"/>
+				<mx:Button id="btnSearch" label="查询" styleName="ToolBarInBtn" fontSize="12" visible="false"/>			
+			</mx:HBox>
+			<mx:DataGrid id="dg"  width="100%" height="259" dataProvider="{_searchResult}" doubleClickEnabled="true"
+				 horizontalScrollPolicy="on" verticalScrollPolicy="on" editable="false" sortableColumns="true" allowMultipleSelection="true">
+				 	<mx:columns>
+					<mx:DataGridColumn width="30" sortable="false" dataField="ISCHECKED" headerRenderer="{hr}" itemRenderer="Custom.Renderer.CenteredCheckBoxItemRenderer" /><!---->
+					<mx:DataGridColumn headerText="歌曲名称" dataField="TITLE" width="120"/>
+					<mx:DataGridColumn headerText="歌手" dataField="SINGER" width="120"/>
+					<mx:DataGridColumn headerText="语言" dataField="LANG" width="120"/>
+					<mx:DataGridColumn headerText="唱片公司" dataField="AUTHOR" width="120"/>
+					<mx:DataGridColumn headerText="音乐类别" dataField="PUBLISHTYPENAME" width="100"/>
+					<mx:DataGridColumn headerText="增加站点" dataField="SUBNAME" width="80"/>
+					<mx:DataGridColumn headerText="添加/修改人员" dataField="ADDMAN" width="120"/>
+					<mx:DataGridColumn headerText="添加/修改时间" dataField="ADDTIME" width="160">
+						<mx:itemRenderer>
+					    	<mx:Component>
+					    		<mx:VBox verticalScrollPolicy="off" horizontalScrollPolicy="off">
+					    			<mx:DateFormatter id="formatter" formatString="YYYY-MM-DD JJ:NN:SS" />
+					    			<mx:Label text="{formatter.format(data.ADDTIME)}" />
+					    		</mx:VBox>
+					    	</mx:Component>
+				 		</mx:itemRenderer>
+					</mx:DataGridColumn>
+				<mx:DataGridColumn headerText="审核人员" dataField="AUDITMAN" width="120"/>
+				<mx:DataGridColumn headerText="状态" dataField="STATENAME" width="80"/>
+				<mx:DataGridColumn headerText="审核时间" dataField="AUDITTIME" width="160">
+					<mx:itemRenderer>
+				    	<mx:Component>
+				    		<mx:VBox verticalScrollPolicy="off" horizontalScrollPolicy="off">
+				    			<mx:DateFormatter id="formatter" formatString="YYYY-MM-DD JJ:NN:SS" />
+				    			<mx:Label text="{formatter.format(data.AUDITTIME)}" />
+				    		</mx:VBox>
+				    	</mx:Component>
+			 		</mx:itemRenderer>
+				</mx:DataGridColumn>
+				</mx:columns>
+			</mx:DataGrid>
+			<mx:HBox id="HboxPager" styleName="ToolBar" paddingLeft="10" height="28" verticalAlign="middle" width="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+				<Pager:Pager id="pager" />
+			</mx:HBox>
+		</mx:VBox>	
+</mx:Module>

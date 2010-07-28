@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ShareManDB">
+  <DataContextMoniker Name="/ShareManDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7a9436c7-b5c0-448a-ab3e-444070fe849f" absoluteBounds="3.75, 1.25, 2, 3.3031640625">
+      <DataClassMoniker Name="/ShareManDBDataContext/Progress" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f26610c-e71c-44df-8529-2289eee4a378" absoluteBounds="3.765, 1.71, 1.9700000000000002, 2.7431640625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,9 @@
+LIBRARY	"FtpClient"
+EXPORTS
+recv_answer @ 1
+file_size @ 2
+getaddress @ 3
+getport @ 4
+download @ 6
+loggin @ 7
+greeting @ 8

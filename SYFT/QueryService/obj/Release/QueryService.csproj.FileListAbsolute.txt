@@ -1,0 +1,5 @@
+D:\work\SYFT\QueryService\bin\QueryService.dll
+D:\work\SYFT\QueryService\bin\QueryService.pdb
+D:\work\SYFT\QueryService\obj\Release\ResolveAssemblyReference.cache
+D:\work\SYFT\QueryService\obj\Release\QueryService.dll
+D:\work\SYFT\QueryService\obj\Release\QueryService.pdb

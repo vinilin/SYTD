@@ -1,0 +1,5 @@
+D:\work\SYFT\ShareBrowse\bin\ShareBrowse.dll
+D:\work\SYFT\ShareBrowse\bin\ShareBrowse.pdb
+D:\work\SYFT\ShareBrowse\obj\Release\ResolveAssemblyReference.cache
+D:\work\SYFT\ShareBrowse\obj\Release\ShareBrowse.dll
+D:\work\SYFT\ShareBrowse\obj\Release\ShareBrowse.pdb
